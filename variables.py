@@ -9,6 +9,13 @@ UCarmor = {
 
 }
 
+UCshield = {
+
+}
+Cshield = {
+
+}
+
 Cweapon = {
 
 }
@@ -19,7 +26,8 @@ Carmor = {
 UCItems = [
     UCweapons,
     UCarmor,
+    UCshield,
 ]
 
-
-
+xp = 0
+level = 0

@@ -6,7 +6,6 @@ Eweapon = False
 EShield = False
 Earmor = False
 
-
 def displayerstat():
     print(f'Hp: {player.hp}, erő: {player.strength}, pajzs: {player.shield},sebesseg {player.speed}, éberség: {player.eberseg}, ügyesseg: {player.agility}')
 

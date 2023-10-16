@@ -1,5 +1,6 @@
 import time
 import os
+foszereplo = input('Mi a neved? ')
 def alom():
     print('Végre itt a nap')
     time.sleep(2)
@@ -15,7 +16,7 @@ def alom():
     time.sleep(1.5)
     print('ZzZzZzZzZzZz')
     time.sleep(1)
-    input('\nENTERRel tovább')
+    input('\nENTERrel tovább')
     os.system('cls')
 
 def bev():
@@ -25,13 +26,36 @@ def bev():
     print('Csövesszálló vezetője: Emlékeztető: aki nem dolgozik elég keményen mehet az utcára aludni.')
     time.sleep(1.5)
     print('Csövesszálló vezetője: Most meg mindenki munkára')
+    input('\nENTERrel tovább')
+    os.system('cls')
+
 
     
-def info():
-    print('Szereplo: ')
+def elk():
+    print(f'{foszereplo}: Megint unalmas nap ahol a többiek által széna közé dobált tűket kell keresgélnem')
+    time.sleep(1)
+    print('Csövesszálló vezetője: A lakhelyed tulaja nem talál túl hasznosnak, ki vagy rúgva a szállásból')
+    time.sleep(1)
+    input('\nENTERrel tovább')
+    os.system('cls')
+
+def kikialtas():
+    print('*dobszó* *dobszó*')
+    time.sleep(1.5)
+    print('Dobos: Nagy veszély fenyegeti a várost, a sárkány el akarja pusztítani.')
+    print('Dobos: Aki megmenti a várost megitésése a legnagyobb lesz, pénzzel soha nem lesz dolga.')
+    time.sleep(3)
+    print(f'{foszereplo}: Én fogom legyözni a sárkányt. ')
+    print(f'{foszereplo}: A sárkányt 5 kristály köti az élethez, minden tájon egy.')
+    print(f'{foszereplo}: Egy a mezőn, egy az erdőben, egy a ....................')
+
+
+
+
+
 alom()
 bev()
-
+elk()
 
 
 

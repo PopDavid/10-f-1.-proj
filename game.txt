@@ -2,7 +2,7 @@ Places:
 - Bánya
 - Erdő
 - Város
-- mező
+- Mező
 - kazamata
 - sárkányverem
 

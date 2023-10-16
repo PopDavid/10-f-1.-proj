@@ -29,5 +29,8 @@ UCItems = [
     UCshield,
 ]
 
-xp = 0
-level = 0
+inv = [
+
+]
+
+money = 0

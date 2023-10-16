@@ -12,6 +12,7 @@ class characters:
         self.shield = 0
         self.damage = self.strength * self.weapon
         self.eberseg = 100
+        self.rep = 0
 
 
 class Enemies:

@@ -103,20 +103,6 @@ def getItem(type, item):
             player.shield += value
             Earmor = True
 
-def xp():
-    global xp, level
-    NeedToLevelup = 10
-    hanyadik = 1
-    while True:
-        if xp > NeedToLevelup:
-            xp -= NeedToLevelup
-            NeedToLevelup = NeedToLevelup * 1.5 + (hanyadik *2 +  5) 
-            hanyadik += 1
-            level += 1
-            randgetItem()
-
-
-
 
 
             

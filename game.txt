@@ -1,0 +1,33 @@
+Places:
+- Bánya
+- Erdő
+- Város
+- mező
+- kazamata
+- sárkányverem
+
+Város:
+- kereskedő
+- konyha
+- vadászház
+- kaszinó
+
+sidequest:              Feltétel:       Helyszin:
+- vadászat              --              erdő
+- gyűjtőgetés           --              errdő
+- gyógyfű szedés        --              mezo
+- lovagi torna          lo              város
+- ogrevadászat          damage, shield  kazamata
+- király kísérés        damage, shield  város -> every
+- kard a kőben          --              város
+- elaltatni a sárkányt  --              sárkányverem
+- meglopni a sárkányt   --              sárkányverem
+ 
+
+mainquest:
+lenyőzni a sárkányt 
+
+optional:
+- kincstár rablás
+- szabad
+

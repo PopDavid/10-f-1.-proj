@@ -1,8 +1,3 @@
-from Entities import *
+from classes import *
 from definialas import *
 from variables import *
-
-
-
-
-

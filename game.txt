@@ -7,10 +7,12 @@ Places:
 - sárkányverem
 
 Város:
-- kereskedő
+- bolt
 - konyha
 - vadászház
 - kaszinó
+- edzőterem
+- templom
 
 sidequest:              Feltétel:       Helyszin:
 - vadászat              --              erdő

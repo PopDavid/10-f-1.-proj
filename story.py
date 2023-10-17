@@ -47,7 +47,9 @@ def kikialtas():
     time.sleep(3)
     print(f'{foszereplo}: Én fogom legyözni a sárkányt. ')
     print(f'{foszereplo}: A sárkányt 5 kristály köti az élethez, minden tájon egy.')
-    print(f'{foszereplo}: Egy a mezőn, egy az erdőben, egy a ....................')
+    print(f'{foszereplo}: Egy a mezőn, egy az erdőben, egy a bányában, egy kazamatában, egy a sárkány vermében. ')
+    time.sleep(2)
+    
 
 
 

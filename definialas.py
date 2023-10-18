@@ -9,10 +9,9 @@ Earmor = 0
 
 
 def displayerstat():
-    print('---------------------------------------------------------------')
-    print(f'HP: {player.hp}, Erő: {player.strength}, pajzs: {player.shield}\nSebesseg {player.speed}, éberség: {player.eberseg}, ügyesseg: {player.agility}')
-    print('pénz:', money)
-    print('---------------------------------------------------------------')
+    print('---------------------------------------')
+    print(f'HP: {player.hp}, Védésém: {player.shield}, Fegyver: {player.weapon} Erő: {player.strength}\nSebesseg {player.speed}, éberség: {player.eberseg}, ügyesseg: {player.agility}')
+    print('---------------------------------------')
 
 
 displayerstat()
@@ -81,10 +80,6 @@ def getItem(type, item):
                     itemindex = int(input('Melyiket szeretnéd használni? (A pajzs védelme): '))-1
             EShield = Cshield[itemindex].shield
             player.shield = EShield + EShield
-
-                
-
-
 
 def torles():
     os.system('cls')

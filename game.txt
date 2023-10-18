@@ -32,6 +32,7 @@ optional:
 - kincstár rablás
 - szabad
 
+
 #####################
 
 Csövesszálló: A játékos itt ébred. Nevet ad magának.

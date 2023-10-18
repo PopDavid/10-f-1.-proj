@@ -1,7 +1,7 @@
 from random import randint
 
 
-class characters:
+class characters: #sablon
 
     def __init__(self) -> None:
         self.hp = 100
@@ -25,7 +25,8 @@ class Enemies:
 
 
 player = characters()
-
+# print(player.hp)
+ 
 
 class weapon:
     def __init__(self, name, damage, price) -> None:
@@ -36,17 +37,11 @@ class weapon:
     def __str__(self):
         return self.name
 
-
-class defen:
-    def __init__(self, name, price) -> None:
+class shield:
+    def __init__(self, name, shield, price) -> None:
         self.shield = shield
         self.price = price
         self.name = name
-
-
-class shield(defen):
-    def __init__(self, name, shield, price) -> None:
-        super().__init__(name, shield, price)
 
     def __str__(self):
         return self.name
@@ -54,9 +49,11 @@ class shield(defen):
 
 
 
-class armor(defen):
-    def __init__(self, name, shield, price) -> None:
-        super().__init__(name, shield, price)
+class armor:
+    def __init__(self, name,shield, price) -> None:
+        self.shield = shield
+        self.price = price
+        self.name = name
 
     def __str__(self):
         return self.name

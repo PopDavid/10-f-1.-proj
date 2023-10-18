@@ -24,7 +24,6 @@ sidequest:              Feltétel:       Helyszin:
 - kard a kőben          --              város
 - elaltatni a sárkányt  --              sárkányverem
 - meglopni a sárkányt   --              sárkányverem
- 
 
 mainquest:
 lenyőzni a sárkányt 

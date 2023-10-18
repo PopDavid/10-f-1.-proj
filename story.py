@@ -48,7 +48,6 @@ def bev():
     input('\nENTERrel tovább')
     os.system('cls')
 
-
     
 def elk():
     Slowtype(f'{foszereplo}: Megint unalmas nap ahol a többiek által széna közé dobált tűket kell keresgélnem')

@@ -5,7 +5,10 @@ vaskard = weapon(name='vaskard (6)', damage=6, price=25)
 obszidianel = weapon(name='obszidiánél (11)', damage=11, price=55)
 
 fapancel = armor(name='fapáncél (1)', shield=1, price=25)
-marvanypancel = armor(name='marvanypáncél (3)', shield=3, )
+marvanypancel = armor(name='marvanypáncél (3)', shield=2, price=55)
+vaspancel = armor(name='vaspáncél (6)', shield = 5, price=105)
+obszidianpancel = armor(name='vaspáncél (6)', shield = 5, price=105)
+
 
 WEAPON = [
     fakard,
@@ -15,7 +18,9 @@ WEAPON = [
 ]
 
 ARMOR = [
-    
+    fapancel,
+    marvanypancel,
+
 ]
 
 

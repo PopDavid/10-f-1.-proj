@@ -1,11 +1,13 @@
 from classes import *
-from variables import *
+from variables import*
 from definialas import *
 
 def shop():
     global money
     list = 0
     torles()
+    displayerstat(money)
+
     print('pénz:', money)
     # Slowtype('1...Vásárolni')
     # Slowtype('2...Eladni')
@@ -18,6 +20,8 @@ def shop():
     while list != '1' and list != '2' and list != '3':
         list = input('Mit szeretnél vásárolni? ')
     torles()
+    displayerstat(money)
+
     match list:
         case '1':
             i = 1
@@ -31,9 +35,11 @@ def shop():
             if item.price <= money:
                 money -= item.price
                 torles()
+                displayerstat(money)
+
                 getItem(type='weapon', item = item)
             else:
-                Slowtype(text='Nincs pénzed erre a fegyverre')
+                print(text='Nincs pénzed erre a fegyverre')
            
                 
         case '2':
@@ -48,9 +54,11 @@ def shop():
             if item.price <= money:
                 money -= item.price
                 torles()
+                displayerstat(money)
+
                 getItem(type='shield', item = item)
             else:
-                Slowtype(text='Nincs pénzed erre a páncélra')
+                print(text='Nincs pénzed erre a páncélra')
         case '3':
             i = 1
             for weapon in ARMOR:
@@ -63,13 +71,17 @@ def shop():
             if item.price <= money:
                 money -= item.price
                 torles()
+                displayerstat(money)
+
                 getItem(type='armor', item = item)
             else:
-                Slowtype(text='Nincs pénzed erre a pajzsra')
+                print(text='Nincs pénzed erre a pajzsra')
 
 def hospital():
     global money
     torles()
+    displayerstat(money)
+
     print('pénzed: ', money)
     print('Életerőd: ', player.hp)
     print('1...Szeretnék meggyógyulni')
@@ -86,6 +98,9 @@ def hospital():
 def gym():
     global money
     torles()
+    displayerstat(money)
+
+
     print('pénzed:', money)
     print(f'erő: {player.strength}, ügyesség: {player.agility}, sebesség: {player.speed}')
     needMSr = int(player.strength * 2.5 + 5)
@@ -143,7 +158,5 @@ def city():
 
 if __name__ == '__main__':
     money = 1000
-    city()
-    print(money)
-    displayerstat()
-    input('efae')
+    while True:
+        city()

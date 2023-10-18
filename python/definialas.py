@@ -1,20 +1,20 @@
 import os
 from classes import *
-from variables import *
 import time
+from variables import *
 
 Eweapon = 0
 EShield = 0
 Earmor = 0
 
 
-def displayerstat():
+def displayerstat(money):
     print('---------------------------------------')
     print(f'HP: {player.hp}, Védésém: {player.shield}, Fegyver: {player.weapon} Erő: {player.strength}\nSebesseg {player.speed}, éberség: {player.eberseg}, ügyesseg: {player.agility}')
+    print('pénz:', money)
     print('---------------------------------------')
 
 
-displayerstat()
 
 def getItem(type, item):
     global Eweapon, EShield, Earmor, money
@@ -83,11 +83,10 @@ def getItem(type, item):
 
 def torles():
     os.system('cls')
-    displayerstat()
 
 def Slowtype(text):
     for i in text:
         print(i, end='')
-        time.sleep(0.1)
+        time.sleep(0.05)
     print()
 

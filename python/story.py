@@ -77,6 +77,7 @@ def kikialtas():
 # alom()
 bev()
 elk()
+kikialtas()
 
 
 

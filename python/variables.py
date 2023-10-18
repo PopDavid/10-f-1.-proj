@@ -65,7 +65,7 @@ inv = [
 
 ]
 
-money = 0
+money = 1000
 bosses = [
     'mineBoss', 
     'forestboss',
@@ -73,4 +73,12 @@ bosses = [
     'dragonlayerboss',
     'fieldboss',
     'dragon'
+]
+
+UDquest = [
+    
+]
+
+Dquest = [
+
 ]

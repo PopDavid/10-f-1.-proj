@@ -1,0 +1,264 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+
+.navheader{
+    background-color: #282828;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-links ul{
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.nav-links li{
+    list-style: none;
+}
+
+.nav-links li a{
+    text-decoration: none;
+    color: white;
+    padding: 1rem;
+    display: block;
+    font-family: 'Squada One', cursive;
+    font-size: large;
+}
+
+.nav-links li:hover{
+    background-color:#555;
+}
+
+.nav-logo img{
+    height: 4rem;
+    margin: .2rem;
+}
+
+.toggle-button{
+    position: absolute;
+    top: .75rem;
+    right: 1rem;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+}
+
+.toggle-button .bar{
+    height: 3px;
+    width: 100%;
+    background-color: white;
+    border-radius: 10px;
+}
+
+@media (max-width: 760px){
+    .toggle-button{
+        display:flex;
+    }
+
+    .nav-links{
+        width: 100%;
+        display: none;
+    }
+
+    .navheader {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .nav-links ul {
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .nav-links li {
+        text-align: center;
+    }
+
+    .nav-links.active {
+        display:flex;
+    }
+}
+
+.welcome-text{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 45rem;
+    color: white;
+    background-position: center;
+    background-size: cover;
+    font-family: 'Squada One', cursive;
+    font-size: 5rem;
+    -webkit-filter: brightness(70%);
+}
+
+.tipus-kulso{
+    margin-left: 20px;
+}
+
+.tipusok{
+    display: inline-flex;
+    align-items: center;
+    margin: 3rem;
+    -webkit-filter: brightness(70%);
+    position: relative;
+    text-align: center;
+    transition: .5s;
+}
+
+.text{
+    position: absolute;
+    top: 20%;
+    left: 80%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-family: 'Squada One', cursive;
+    font-size: 4rem;
+}
+
+.text-a:hover{
+    text-decoration: none;
+    color: white;
+}
+
+.text-a{
+    text-decoration: none;
+    color: white;
+}
+
+.tipusok:hover{
+    transition: .5s;
+    -webkit-filter: brightness(100%);
+}
+
+.box{
+    width: 32.6rem;
+    height: 18rem;
+}
+
+.phoenix img{
+    width: 300px;
+    height: 300px;
+    margin: 50px;
+    border-radius: 50px;
+    cursor: pointer;
+    border: 5px #282828;
+}
+
+.phoenix img:hover{
+    -webkit-filter: brightness(50%);
+    transition: .5s;
+    transform: scale(110%);
+}
+
+.phoenix img:active{
+    transform: scale(100%);
+}
+
+.jett img{
+    width: 300px;
+    height: 300px;
+    margin: 50px;
+    border-radius: 50px;
+    cursor: pointer;
+    border: 5px #282828;
+    background-size: cover;
+}
+
+.jett img:hover{
+    -webkit-filter: brightness(50%);
+    transition: .5s;
+    transform: scale(110%);
+}
+
+.jett img:active{
+    transform: scale(100%);
+}
+
+.Reyna img{
+    width: 300px;
+    height: 300px;
+    margin: 50px;
+    border-radius: 50px;
+    cursor: pointer;
+    border: 5px #282828;
+    background-size: cover;
+}
+
+.Reyna img:hover{
+    -webkit-filter: brightness(50%);
+    transition: .5s;
+    transform: scale(110%);
+}
+
+.Reyna img:active{
+    transform: scale(100%);
+}
+
+.Raze img{
+    width: 300px;
+    height: 300px;
+    margin: 50px;
+    border-radius: 50px;
+    cursor: pointer;
+    border: 5px #282828;
+    background-size: cover;
+}
+
+.Raze img:hover{
+    -webkit-filter: brightness(50%);
+    transition: .5s;
+    transform: scale(110%);
+}
+
+.Raze img:active{
+    transform: scale(100%);
+}
+
+.Yoru img{
+    width: 300px;
+    height: 300px;
+    margin: 50px;
+    border-radius: 50px;
+    cursor: pointer;
+    border: 5px #282828;
+    background-size: cover;
+}
+
+.Yoru img:hover{
+    -webkit-filter: brightness(50%);
+    transition: .5s;
+    transform: scale(110%);
+}
+
+.Yoru img:active{
+    transform: scale(100%);
+}
+
+.Neon img{
+    width: 300px;
+    height: 300px;
+    margin: 50px;
+    border-radius: 50px;
+    cursor: pointer;
+    border: 5px #282828;
+    background-size: cover;
+}
+
+.Neon img:hover{
+    -webkit-filter: brightness(50%);
+    transition: .5s;
+    transform: scale(110%);
+}
+
+.Neon img:active{
+    transform: scale(100%);
+}

@@ -33,3 +33,18 @@ optional:
 - kincstár rablás
 - szabad
 
+#####################
+
+Csövesszálló: A játékos itt ébred. Nevet ad magának.
+
+- A király kihirdeteti a sárkány jelentette fenyegetést.
+- A játékosnak el kell jutnia a várba.
+
+Vár: A questboard itt tekinthető meg.
+
+- A játékos felveheti a sárkány megölése küldetést.
+
+Árus: nála lehet venni felszerelést.
+
+- Pénzt kell szerezni: kéregetés, zsebelés, koldulás, lopás, kaszinó
+- 

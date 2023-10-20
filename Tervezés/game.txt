@@ -33,18 +33,110 @@ optional:
 - szabad
 
 
+A sidequestek és az optional questek körbe írva és szagatott vonallal a helyszínhez kapcsolva láthatók.
+
 #####################
 
-Csövesszálló: A játékos itt ébred. Nevet ad magának.
+1. Vár
 
-- A király kihirdeteti a sárkány jelentette fenyegetést.
-- A játékosnak el kell jutnia a várba.
+2. Szállás: A játékos itt ébred. Ide térhet vissza kipihenni magát.
 
-Vár: A questboard itt tekinthető meg.
+    - A király kihirdeteti a sárkány jelentette fenyegetést.
+    - A játékos a királynál tud jelentkezni.
 
-- A játékos felveheti a sárkány megölése küldetést.
+3. Konyha
+        
+    - Készíthet magának gyógyító itemeket.
 
-Árus: nála lehet venni felszerelést.
+4. Edzőterem
+
+    - Erősítheti magát a játékos.
+
+5. Kaszinó
+
+    - A játékos próbára teheti szerencséjét.
+
+6. Várkert
+
+    - Lovagi torna sidequest
+
+7. Gyógyítás
+
+    - Itt láthatók az aktuális küldetések
+
+8. Kereskedőház
+
+    - Nagyobb értékű tárgyak itt vásárolhatóak meg.
+
+9. Küldetésfal
+
+    - Itt láthatók az aktuális küldetések.
+
+10. Várbörtön
+
+    - Akár itt végezve is kifuthat a játék.
+
+11. Király
+
+    - A király egyes esetekben maga elé tud hívatni.
+    - Tőle kell felvenni a főküldetést.
+
+12. Kincstár
+
+    - Titkos küldetés: kincstárrablás
+        - Szükséges: őr kizsebelése, ló
+
+13. Város
+    
+    - Fő csomópont
+
+14. Árus
+
+    - Nála is lehet venni felszerelést
+    - Felvehető küldetés: kard a kőben
+
+15. Szikla
+
+    - Kard a kőben quest
+
+16. Koldus
+
+    - Meg lehet segíteni, megölni, vagy épp kisegíteni (reputáció változás)
+
+17. Templom
+
+18. Mező
+
+19. Vadászház
+
+    - Felvehető küldetések: vadászat, ogrevadászat, gyűjtögetés
+    - Zsákmány leadóhely
+
+20. Hegység
+
+21. Bánya
+    
+    - Felvehető: bányászok segítése küldetés (reputáció) 
+
+22. Sárkányverem
+
+    - A végső harc helyszíne
+
+23. Lovarda
+
+    - Ló vásárolható
+
+24. Erdő
+
+    - Elhagyható innen a város végleg
+
+25. Kazamata
+
+    - Ogrevadászat helyszíne
+
+
+
+
+
 
 - Pénzt kell szerezni: kéregetés, zsebelés, koldulás, lopás, kaszinó
-- 

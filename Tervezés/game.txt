@@ -33,7 +33,7 @@ optional:
 - szabad
 
 
-A sidequestek és az optional questek körbe írva és szagatott vonallal a helyszínhez kapcsolva láthatók.
+
 
 #####################
 
@@ -134,9 +134,16 @@ A sidequestek és az optional questek körbe írva és szagatott vonallal a hely
 
     - Ogrevadászat helyszíne
 
+26. Városháza
 
+    - Felvehető a bányászok segítése küldetés.
 
+27. Elhagyatott kunyhó
 
+A questek további csomópontokat fognak eredményezni.
 
+A sidequestek és az optional questek körbe írva és szagatott vonallal a helyszínhez kapcsolva láthatók.
 
-- Pénzt kell szerezni: kéregetés, zsebelés, koldulás, lopás, kaszinó
+Pénzt kell szerezni: kéregetés, zsebelés, koldulás, lopás, kaszinó
+
+Reputáció rendszer: a játékos városbeli megbecsültsége, akár az árakat is befolyásolhatja

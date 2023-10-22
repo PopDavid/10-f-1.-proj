@@ -1,6 +1,8 @@
 from classes import *
 from variables import*
 from definialas import *
+from quest import *
+from random import *
 
 def shop():
     global money
@@ -103,9 +105,9 @@ def gym():
 
     print('pénzed:', money)
     print(f'erő: {player.strength}, ügyesség: {player.agility}, sebesség: {player.speed}')
-    needMSr = int(player.strength * 2.5 + 5)
-    needMA = int(player.agility * 2.5 + 5)
-    needMSp = int(player.speed * 2.5 + 5)
+    needMSr = int(player.strength *15 + 5)
+    needMA = int(player.agility * 15 + 5)
+    needMSp = int(player.speed * 15 + 5)
     print(f'1...erő (ár: {needMSr})')
     print(f"2...ügyesség (ár: {needMA})")
     print(f"3...sebesség (ár: {needMSp})")
@@ -129,9 +131,6 @@ def gym():
                 player.speed += 1
     else:
         print('Nincs elég pénzed')
-    
-def questboard():
-    pass
 
 def leaveCity():
     pass
@@ -141,6 +140,7 @@ def city():
     print('2...Korház')
     print('3...gym')
     print('4...küldetésfal')
+    print('5...pénz gyüjteni a városban')
     print('0...Ki a városból')
     
     choise = input('Hová szeretnék menni? ')
@@ -153,6 +153,8 @@ def city():
             gym()
         case '4':
             questboard()
+        case '5':
+            collectmoney()
         case '0':
             leaveCity()
 

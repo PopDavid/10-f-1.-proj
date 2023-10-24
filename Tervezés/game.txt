@@ -3,7 +3,6 @@ Places:
 - Erdő
 - Város
 - Mező
-- kazamata
 - sárkányverem
 
 Város:

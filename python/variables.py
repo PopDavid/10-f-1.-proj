@@ -184,3 +184,9 @@ szenBoundle = [
 ]
 
 currentquest = QUESTS[1]
+
+# OPICÓS LISTÁK
+
+opcio4 = ['0', '1', '2', '3', '4']
+opcio5 = ['0', '1', '2', '3', '4', '5']
+opcio6 = ['0', '1', '2', '3', '4', '5', '6']

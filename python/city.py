@@ -143,20 +143,77 @@ def city():
     print('5...pénz gyüjteni a városban')
     print('0...Ki a városból')
     
-    choise = input('Hová szeretnék menni? ')
-    match choise:
+    choice = ''
+
+    while not choice in opcio5:
+        choice = input('Hová szeretnék menni? ')
+    match choice:
         case '1':
             shop()
         case '2':
-            hospital()
-        case '3':
             gym()
+        case '3':
+            questboard()
         case '4':
             questboard()
         case '5':
             collectmoney()
         case '0':
             leaveCity()
+
+def castle():
+    print('1...Szállás')
+    print('2...Edzőterem')
+    print('3...Kaszinó')
+    print('4...Várkert')
+    print('5...Kincstár')
+    print('6...Kórház')
+    print('7...Kereskedőház')
+    print('8...Küldetésfal')
+    print('9...Várbörtön')
+    print('0...Vár elhagyása')
+    
+    choice = ''
+
+    while not choice in opcio5:
+        choice = input('Hová szeretnék menni? ')
+    match choice:
+        case '1':
+            hostel()
+        case '2':
+            gym()
+        case '3':
+            casino()
+        case '4':
+            questboard()
+        case '5':
+            treasury()
+        case '6':
+            hospital()
+        case '7':
+            shop()
+        case '8':
+            questboard()
+        case '9':
+            prison()
+        case '0':
+            city()
+
+
+
+def hostel():
+    pass
+
+def casino():
+    pass
+
+def treasury():
+    pass
+
+def prison():
+    pass
+
+
 
 if __name__ == '__main__':
     money = 1000

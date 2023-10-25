@@ -1,0 +1,50 @@
+Places:
+- Bánya
+- Erdő
+- Város
+- Mező
+- kazamata
+- sárkányverem
+
+Város:
+- bolt
+- konyha
+- vadászház
+- kaszinó
+- edzőterem
+- templom
+
+sidequest:              Feltétel:       Helyszin:
+- vadászat              --              erdő
+- gyűjtőgetés           --              errdő
+- gyógyfű szedés        --              mezo
+- lovagi torna          lo              város
+- ogrevadászat          damage, shield  kazamata
+- király kísérés        damage, shield  város -> every
+- kard a kőben          --              város
+- elaltatni a sárkányt  --              sárkányverem
+- meglopni a sárkányt   --              sárkányverem
+
+mainquest:
+lenyőzni a sárkányt 
+
+optional:
+- kincstár rablás
+- szabad
+
+
+#####################
+
+Csövesszálló: A játékos itt ébred. Nevet ad magának.
+
+- A király kihirdeteti a sárkány jelentette fenyegetést.
+- A játékosnak el kell jutnia a várba.
+
+Vár: A questboard itt tekinthető meg.
+
+- A játékos felveheti a sárkány megölése küldetést.
+
+Árus: nála lehet venni felszerelést.
+
+- Pénzt kell szerezni: kéregetés, zsebelés, koldulás, lopás, kaszinó
+- 

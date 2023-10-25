@@ -3,6 +3,8 @@ from classes import *
 import time
 from variables import *
 import sys
+from bosses import *
+from minigames import *
 
 Eweapon = 0
 EShield = 0
@@ -15,11 +17,13 @@ def displayerstat(money):
     print('pénz:', money)
     print('---------------------------------------')
 
+
 def heal(amount):
     if amount + player.hp > 100:
         player.hp = 100
     else:
         player.hp += amount
+
 
 def takeDamage(value):
     player.hp -= value
@@ -31,6 +35,7 @@ def takeDamage(value):
         print('Nem keltél fel megint')
         print('Vége')
         sys.exit()
+
 
 def getItem(type, item):
     global Eweapon, EShield, Earmor, money
@@ -49,11 +54,11 @@ def getItem(type, item):
                     item = ''
                     i = 1
                     for weapon in Cweapon:
-                        print(i,'...', weapon.name)
+                        print(i, '...', weapon.name)
                         i += 1
                     itemindex = 9999
                     while not itemindex < len(Cweapon):
-                        itemindex = int(input('Melyiket szeretnéd használni? (a fegyver sebzése): '))-1
+                        itemindex = int(input('Melyiket szeretnéd használni? (a fegyver sebzése): ')) - 1
                 Eweapon = Cweapon[itemindex].damage
                 player.weapon = Eweapon
 
@@ -70,11 +75,11 @@ def getItem(type, item):
                     item = ''
                     i = 1
                     for armor in Carmor:
-                        print(i,'...', armor.name)
+                        print(i, '...', armor.name)
                         i += 1
                     itemindex = 9999
                     while not itemindex < len(Carmor):
-                        itemindex = int(input('Melyiket szeretnéd használni? (A pajzs védelme): '))-1
+                        itemindex = int(input('Melyiket szeretnéd használni? (A pajzs védelme): ')) - 1
                 EShield = Carmor[itemindex].shield
                 player.shield = Earmor + EShield
         case 'shield':
@@ -89,16 +94,18 @@ def getItem(type, item):
                 item = ''
                 i = 1
                 for shield in Cshield:
-                    print(i,'...', shield.name)
+                    print(i, '...', shield.name)
                     i += 1
                 itemindex = 9999
                 while not itemindex < len(Cshield):
-                    itemindex = int(input('Melyiket szeretnéd használni? (A pajzs védelme): '))-1
+                    itemindex = int(input('Melyiket szeretnéd használni? (A pajzs védelme): ')) - 1
             EShield = Cshield[itemindex].shield
             player.shield = EShield + EShield
 
+
 def torles():
     os.system('cls')
+
 
 def Slowtype(text):
     for i in text:
@@ -106,13 +113,14 @@ def Slowtype(text):
         time.sleep(0.05)
     print()
 
-def ido(eltMinute = 0, eltHour = 0, eltDay = 0):
+
+def ido(eltMinute=0, eltHour=0, eltDay=0):
     global hour, minute, day
     minute += eltMinute
     hour += eltHour
     day += eltDay
     while minute >= 60:
-        minute -=  60
+        minute -= 60
         hour += 1
 
     if not hour < 22:
@@ -121,9 +129,10 @@ def ido(eltMinute = 0, eltHour = 0, eltDay = 0):
             player.eberseg = 100
         else:
             print('A vadonban aludtál')
-            player.eberseg ==  75
+            player.eberseg == 75
         hour = 6
         minute = 0
+
 
 def repdec(amount):
     player.rep -= amount
@@ -138,11 +147,12 @@ def repdec(amount):
             print('r garbjefjoafjabfja')
         sys.exit()
 
+
 def fight(enemy):
     global money, goblin, ogre, bandit, cerberus, vampir
-    while enemy.hp >=  0:
+    while enemy.hp >= 0:
         print(f'ellenfeled hp: {enemy.hp}, sebessége: {enemy.speed}, ereje: {enemy.strength}, védelme: {enemy.shield}')
-        if player.speed <= enemy.speed :
+        if player.speed <= enemy.speed:
             print('Ő a gyorsabb ő támad először')
             enemydamage = enemy.strength - player.shield
             print(f'az ellenfeled-et {enemydamage}-et  sebzett.')
@@ -196,10 +206,11 @@ def fight(enemy):
 
     money += foundmoney
 
+
 def goto(place):
     global nowplace
     if not str(place) in PLACE:
-        print('place not in PLACE')
+        print(f'{place} not in PLACE')
         return 0
     match place:
         case 'forest':
@@ -213,7 +224,7 @@ def goto(place):
         case 'mountain':
             distance = 65
         case 'city':
-             match nowplace:
+            match nowplace:
                 case 'forest':
                     distance = 50
                 case 'field':
@@ -232,8 +243,8 @@ def goto(place):
             distance -= 5
             print('gyalogolsz')
             time.sleep(1)
-        if randint(1, 3) ==  1:
-            rand = randint(1, 10)            
+        if randint(1, 3) == 1:
+            rand = randint(1, 10)
             if rand in range(1, 5):
                 print('egy goblin állja az utad')
                 fight(goblin)
@@ -254,9 +265,43 @@ def goto(place):
     torles()
 
 
+def field():
+    if nowplace == 'field':
+        goto('field')
+    print('1...gyógynövényt szedni')
+    print('1...Legyőzni a bosst')
+    val = input('Mit szeretnél csinálni')
+    match val:
+        case '1':
+            fieldMiniGame()
+        case '2':
+            fieldBossFight()
 
 
+def forest():
+    if nowplace == 'forest':
+        goto('forest')
+    print('1..fát vágni')
+    print('2...legyőzni a bosst')
+    val = input('Mit szeretnél csinálni')
+    match val:
+        case '1':
+            forestMiniGame()
+        case '2':
+            forestBossFight()
+
+
+def mine():
+    if nowplace == 'mine':
+        goto('mine')
+    print('1..válogatni')
+    print('2...legyőzni a bosst')
+    val = input('Mit szeretnél csinálni')
+    match val:
+        case '1':
+            mineMiniGame()
+        case '2':
+            mineBossFight()
+        
 if __name__ == '__main__':
-    getItem(type='weapon',item =  obszidianel)
-    player.strength = 3
-    goto('forest')
+    pass

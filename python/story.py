@@ -61,13 +61,12 @@ def kikialtas():
     
     input('\nKirály elé járulás az ENTER megnyomásával >>')
 
-    print('Sikeresen megérkeztél ide: {nowplace}')
+    print('Sikeresen megérkeztél ide: vár')
 
 
 
 bev()
-elk()
-kikialtas()
+
 
 
 

@@ -1,8 +1,9 @@
 from classes import *
-from variables import*
+from variables import *
 from definialas import *
 from random import choice
 import time
+
 
 def collectmoney():
     print('Még kéne egy kis pénz')
@@ -18,6 +19,7 @@ def collectmoney():
         case '3':
             cmoney = work()
     return cmoney
+
 
 def steal():
     global money
@@ -44,7 +46,7 @@ def steal():
         player.hp -= 20
         ido(15)
         return 0
-    
+
     elif happening in range(81, 96):
         print('Elkaptak, megvertek, elvettek töled egy kevés pénzt')
         player.hp -= 20
@@ -61,9 +63,10 @@ def steal():
         ido(15)
         return -50
 
+
 def begging():
     global money
-    
+
     print('1...idő')
     print('2...pénz')
     type = input('Meddig szeretnél kéregetni?')
@@ -73,13 +76,13 @@ def begging():
         case '1':
             cMoney = 0
             print(cMoney)
-            kmin, khour =input('Mennyi időt szeretnél kéregetni? (perc ora)').split()
+            kmin, khour = input('Mennyi időt szeretnél kéregetni? (perc ora)').split()
             kmin, khour = int(kmin), int(khour)
 
             while kmin >= 60:
                 kmin -= 60
                 khour += 0
-            while kmin > vmin  or  khour > vhour:
+            while kmin > vmin or khour > vhour:
                 randomszam = randint(1, 3)
                 if randomszam == 1:
                     cMoney += 2
@@ -108,6 +111,7 @@ def begging():
             print(f'{vmin} perc, {vhour} óra telt el')
     return cMoney
 
+
 def work():
     global money
     if player.rep < 50:
@@ -125,12 +129,13 @@ def work():
     elif player.rep <= 100:
         print('helyet kaptál a király személyes védőkárdájában, nagy fizetésért. (50 / óra)')
         payment = 50
-    whour = int(input('hány órát szeretnél dolgozni? '))    
+    whour = int(input('hány órát szeretnél dolgozni? '))
     cMoney = whour * payment
     print(cMoney, 'pénz szereztél')
     money += cMoney
     ido(0, whour)
     return cMoney
+
 
 def PALjatek():
     global Palvolt, pal, PAL
@@ -140,14 +145,14 @@ def PALjatek():
     input('ENTERrel kezdés')
     startTime = time.time()
     score = 0
-    while time.time() - startTime < 15:
-        val = input('szó:')
+    while time.time() - startTime < 60:
+        val = input('Szó:').lower()
         if val in pal:
             score += 1
             pal.remove(val)
             print(f'Helyes')
         elif val in PAL:
-            print('volt már')
+            print('Volt már')
         else:
             print(f'Helytelen')
     pal = []
@@ -160,6 +165,7 @@ def PALjatek():
         Palvolt = True
     else:
         Slowtype(f'özvegy: Nagyon jól teljesítettél.\nözvegy pontosan {score} szót mondtál helyesen')
+
 
 def sidequest():
     match currentquest:
@@ -176,11 +182,12 @@ def sidequest():
         # case 'kard a kőben':
         #     swordInStone()
 
+
 def hunting():
     global currentquest, money
-    esely = 4  - player.agility
+    esely = 4 - player.agility
     if esely < 1:
-       esely = 1
+        esely = 1
     print('a vadászok előrementek a mezőre, neked is oda kéne menned.')
     goto('field')
     Slowtype('vadászok: a cél 10 vadat elejteni.')
@@ -189,10 +196,10 @@ def hunting():
     while vadak != 5:
         torles()
         while randint(1, 4) != 1:
-           print('vársz')
-           ido(5)
-           time.sleep(1.5)
-           ido(10)
+            print('vársz')
+            ido(5)
+            time.sleep(1.5)
+            ido(10)
         torles()
         print('meglátsz egy prédát')
         time.sleep(2)
@@ -209,22 +216,23 @@ def hunting():
     print('eladtad a vadat a vadászoknak, kaptál érte 50 pénzt')
     money += 50
     currentquest = 'gyűjtőgetés'
-        
+
+
 def collecting():
     global currentquest, money
     print('A király fia beteg.\ntalán ha szednék neki egy kis gyógyfüzet a mezőről kapnék egy kis jutalmat.')
     goto('field')
     torles()
-    esely = 5  - player.speed
+    esely = 5 - player.speed
     if esely < 1:
-       esely = 1
+        esely = 1
     need = 20
     while need != 0:
         while randint(1, esely) != 1:
             print('nézelődsz')
             time.sleep(1.5)
         find = randint(1, 3)
-        if need -find > 0:
+        if need - find > 0:
             need -= find
             print(f'találtál {find} növényt ami neked kell. Már csak {need} növényt kell keresni')
             input('ENTER')
@@ -240,10 +248,12 @@ def collecting():
             money += 50
             currentquest = 'ogrevadászat'
 
+
 def knightquest():
     if not lo:
-        print('nincs lovad, gyere vissza ha lesz.') 
-    
+        print('nincs lovad, gyere vissza ha lesz.')
+
+
 def ogrehunt():
     global currentquest, money
     print('A hegy kség el van árasztva ogrével.\noda kéne menni, egy kicsit szétcsapni közöttük.')
@@ -260,9 +270,10 @@ def ogrehunt():
     money += 75
     currentquest = 'király kísérés'
 
+
 def kingfollow():
     global money, currentquest
-    print('a király el szeretne látogatni a bányába. Őrséget keres maga mellé.') 
+    print('a király el szeretne látogatni a bányába. Őrséget keres maga mellé.')
     print('Jó pénzt ígér ha én is segítek megvédelni.')
     print('jelentkeztél, elindultatok')
     for _ in range(randint(3, 5)):
@@ -271,7 +282,7 @@ def kingfollow():
     time.sleep(2)
     print('az úton egy csapat jól felfegyverkezet bandita támadt rátok.')
     needKillBandit = 5
-    while needKillBandit!= 1:
+    while needKillBandit != 1:
         fight(bandit)
         needKillBandit -= 1
         print(f'ez nehéz küzdelem volt. Már csak {needKillBandit} banditát kell megöljek')
@@ -305,6 +316,7 @@ def kingfollow():
     money += 150
     currentquest = None
 
+
 def collectmoneyquest():
     global currentquest
     cmoney = 0 + money
@@ -314,6 +326,7 @@ def collectmoneyquest():
     print('megvetted a kardot, amiért eddig fáradoztál')
     getItem('weapon', marvanykard)
     currentquest = 'vadászat'
+
 
 def sleepingdragon():
     global money
@@ -329,6 +342,7 @@ def sleepingdragon():
         takeDamage(50)
     goto('city')
 
+
 def stealFromDragon():
     global money
     print('Meg kéne lopni a sárkányt, így később fog a városra támadni.')
@@ -342,6 +356,7 @@ def stealFromDragon():
         print('Miközben megpróbáltad elaltatni a sárkányt az felkelt, megsebzett.')
         takeDamage(50)
     goto('city')
+
 
 def swordInStone():
     global money
@@ -359,7 +374,7 @@ def swordInStone():
     if player.strength == 7:
         ido(0, 1)
         print('A karddal 1 órát szerencsétlenkedtél')
-    if player.strength >7:
+    if player.strength > 7:
         ido(30)
         print('A karddal 30 percet szerencsétlenkedtél')
     input('ENTER')
@@ -384,37 +399,34 @@ def swordInStone():
                 print('egy obszidiánél volt')
                 getItem('weapon', obszidianel)
 
+
 def questboard():
-        print('1... ', currentquest)
-        i = 1
-        for quest in universialquest:
-            i += 1
-            print(i,'...', quest)
-        questindex = int(input('Melyiket szeretnéd megcsinálni? '))-2
+    print('1... ', currentquest)
+    i = 1
+    for quest in universialquest:
+        i += 1
+        print(i, '...', quest)
+    questindex = int(input('Melyiket szeretnéd megcsinálni? ')) - 2
 
-        # while questindex > len(universialquest):   
-        # questindex = int(input('Melyiket szeretnéd megcsinálni? '))-2
-        match questindex:
-            case -1:
-                sidequest()
-            case 0:
-                PALjatek()
-            case 1:
-                knightquest()
-            case 2:
-                swordInStone()
-            case 3:
-                sleepingdragon()
-            case 4:
-                stealFromDragon()
-
-
+    # while questindex > len(universialquest):
+    # questindex = int(input('Melyiket szeretnéd megcsinálni? '))-2
+    match questindex:
+        case -1:
+            sidequest()
+        case 0:
+            PALjatek()
+        case 1:
+            knightquest()
+        case 2:
+            swordInStone()
+        case 3:
+            sleepingdragon()
+        case 4:
+            stealFromDragon()
 
 
 if __name__ == '__main__':
     player.strength = 5
-    player.speed = 7
-    player.agility = 8
     getItem(type='weapon', item=obszidianel)
     getItem(type='armor', item=obszidianpancel)
     getItem(type='shield', item=obszidianpajzs)

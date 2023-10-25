@@ -1,22 +1,29 @@
-import os
 from classes import *
-from variables import *
-import time
+from variables import*
 from definialas import *
+from quest import *
+from random import *
+
 def shop():
     global money
     list = 0
-    os.system('cls')
+    torles()
+    displayerstat(money)
+
+    print('pénz:', money)
     # Slowtype('1...Vásárolni')
     # Slowtype('2...Eladni')
     # while act != '1' and act != '2':
     #     act = input('Mit szeretnél csinálni?')
-    Slowtype('1...Fegyver')
-    Slowtype('2...pajzs')
-    Slowtype('3...páncél')
+    print('1...fegyver')
+    print('2...pajzs')
+    print('3...páncél')
 
     while list != '1' and list != '2' and list != '3':
         list = input('Mit szeretnél vásárolni? ')
+    torles()
+    displayerstat(money)
+
     match list:
         case '1':
             i = 1
@@ -29,9 +36,12 @@ def shop():
             item = WEAPON[itemindex]
             if item.price <= money:
                 money -= item.price
+                torles()
+                displayerstat(money)
+
                 getItem(type='weapon', item = item)
             else:
-                Slowtype(text='Nincs pénzed erre a fegyverre')
+                print(text='Nincs pénzed erre a fegyverre')
            
                 
         case '2':
@@ -45,9 +55,12 @@ def shop():
             item = SHIELD[itemindex]
             if item.price <= money:
                 money -= item.price
+                torles()
+                displayerstat(money)
+
                 getItem(type='shield', item = item)
             else:
-                Slowtype(text='Nincs pénzed erre a páncélra')
+                print(text='Nincs pénzed erre a páncélra')
         case '3':
             i = 1
             for weapon in ARMOR:
@@ -59,16 +72,22 @@ def shop():
             item = ARMOR[itemindex]
             if item.price <= money:
                 money -= item.price
+                torles()
+                displayerstat(money)
+
                 getItem(type='armor', item = item)
             else:
-                Slowtype(text='Nincs pénzed erre a pajzsra')
+                print(text='Nincs pénzed erre a pajzsra')
 
 def hospital():
     global money
+    torles()
+    displayerstat(money)
+
     print('pénzed: ', money)
     print('Életerőd: ', player.hp)
-    Slowtype('1...Szeretnék meggyógyulni')
-    Slowtype('0... Semmit')
+    print('1...Szeretnék meggyógyulni')
+    print('0... Semmit')
     valasz = input('Mit szeretnél csinálni? ')
     if valasz != '1':
         pass
@@ -80,11 +99,15 @@ def hospital():
 
 def gym():
     global money
+    torles()
+    displayerstat(money)
+
+
     print('pénzed:', money)
     print(f'erő: {player.strength}, ügyesség: {player.agility}, sebesség: {player.speed}')
-    needMSr = int(player.strength * 2.5 + 5)
-    needMA = int(player.agility * 2.5 + 5)
-    needMSp = int(player.speed * 2.5 + 5)
+    needMSr = int(player.strength *15 + 5)
+    needMA = int(player.agility * 15 + 5)
+    needMSp = int(player.speed * 15 + 5)
     print(f'1...erő (ár: {needMSr})')
     print(f"2...ügyesség (ár: {needMA})")
     print(f"3...sebesség (ár: {needMSp})")
@@ -108,9 +131,6 @@ def gym():
                 player.speed += 1
     else:
         print('Nincs elég pénzed')
-    
-def questboard():
-    pass
 
 def leaveCity():
     pass
@@ -120,6 +140,7 @@ def city():
     print('2...Korház')
     print('3...gym')
     print('4...küldetésfal')
+    print('5...pénz gyüjteni a városban')
     print('0...Ki a városból')
     
     choise = input('Hová szeretnék menni? ')
@@ -132,12 +153,12 @@ def city():
             gym()
         case '4':
             questboard()
+        case '5':
+            collectmoney()
         case '0':
             leaveCity()
 
 if __name__ == '__main__':
     money = 1000
-    city()
-    print(money)
-    displayerstat()
-    input('efae')
+    while True:
+        city()

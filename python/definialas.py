@@ -260,7 +260,7 @@ def goto(place):
                 fight(vampir)
         ido(30)
     nowplace = place
-    print('elérted célod')
+    print('Sikeresen megérkeztél ide: {nowplace}')
     input('ENTER')
     torles()
 

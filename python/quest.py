@@ -213,7 +213,8 @@ def hunting():
 def collecting():
     global currentquest, money
     print('A király fia beteg.\ntalán ha szednék neki egy kis gyógyfüzet a mezőről kapnék egy kis jutalmat.')
-    goto('field')
+    if nowplace != 'field':
+        goto('field')
     torles()
     esely = 5  - player.speed
     if esely < 1:
@@ -238,7 +239,41 @@ def collecting():
             goto('city')
             print('Leadtad a gyógynövényeket, kaptál érte 50 pénzt')
             money += 50
-            currentquest = 'ogrevadászat'
+           #  currentquest = 'ogrevadászat'
+
+def collectingFirst():
+    global currentquest, money
+    Slowtype('[SZOLGA]: A király fia megbetegedett! Mai feladatod, hogy gyógynövényeket szedj neki a mezőn!')
+    time.sleep(1)
+    Slowtype('(Gondolat): Remélem ezért jutalomban fogok részesülni!')
+    time.sleep(2)
+    nowplace = 'field'
+    print('Sikeresen megérkeztél ide: {nowplace}')
+    torles()
+    esely = 5  - player.speed
+    if esely < 1:
+       esely = 1
+    need = 20
+    while need != 0:
+        while randint(1, esely) != 1:
+            print('Gyógynövény után kutatsz.')
+            time.sleep(1.5)
+        find = randint(1, 3)
+        if need -find > 0:
+            need -= find
+            print(f'Találtál {find} növényt, melyre szükséged is van. Már csak {need} növényt kell találnod.')
+            input('ENTER')
+            torles()
+        else:
+            need = 0
+            Slowtype(f'[]Megtaláltam a {find} növényt. Megvan amiért jöttem!')
+            time.sleep(1)
+            input('\Visszatérés a városba az ENTER megnyomásával >>')
+            torles()
+            nowplace = 'city'
+            print('Leadtad a gyógynövényeket, 50 pénz üti markod.')
+            money += 50
+           
 
 def knightquest():
     if not lo:

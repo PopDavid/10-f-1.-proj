@@ -107,7 +107,8 @@ body{
 .tipusok{
     display: inline-flex;
     align-items: center;
-    margin: 3rem;
+    margin: 6.7rem;
+    justify-content: center;
     -webkit-filter: brightness(70%);
     position: relative;
     text-align: center;
@@ -144,121 +145,32 @@ body{
     height: 18rem;
 }
 
-.phoenix img{
-    width: 300px;
-    height: 300px;
-    margin: 50px;
+h1{
+    margin-left: 64px;
+    padding: 30px;
+    text-decoration: underline;
+}
+
+.boss{
+    display: inline-flex;
+    float: left;
+}
+
+.boss img{
+    width: 250px;
+    height: 250px;
+    margin: 64px;
     border-radius: 50px;
     cursor: pointer;
     border: 5px #282828;
 }
 
-.phoenix img:hover{
-    -webkit-filter: brightness(50%);
+.boss img:hover{
+    -webkit-filter: brightness(80%);
     transition: .5s;
     transform: scale(110%);
 }
 
-.phoenix img:active{
-    transform: scale(100%);
-}
-
-.jett img{
-    width: 300px;
-    height: 300px;
-    margin: 50px;
-    border-radius: 50px;
-    cursor: pointer;
-    border: 5px #282828;
-    background-size: cover;
-}
-
-.jett img:hover{
-    -webkit-filter: brightness(50%);
-    transition: .5s;
-    transform: scale(110%);
-}
-
-.jett img:active{
-    transform: scale(100%);
-}
-
-.Reyna img{
-    width: 300px;
-    height: 300px;
-    margin: 50px;
-    border-radius: 50px;
-    cursor: pointer;
-    border: 5px #282828;
-    background-size: cover;
-}
-
-.Reyna img:hover{
-    -webkit-filter: brightness(50%);
-    transition: .5s;
-    transform: scale(110%);
-}
-
-.Reyna img:active{
-    transform: scale(100%);
-}
-
-.Raze img{
-    width: 300px;
-    height: 300px;
-    margin: 50px;
-    border-radius: 50px;
-    cursor: pointer;
-    border: 5px #282828;
-    background-size: cover;
-}
-
-.Raze img:hover{
-    -webkit-filter: brightness(50%);
-    transition: .5s;
-    transform: scale(110%);
-}
-
-.Raze img:active{
-    transform: scale(100%);
-}
-
-.Yoru img{
-    width: 300px;
-    height: 300px;
-    margin: 50px;
-    border-radius: 50px;
-    cursor: pointer;
-    border: 5px #282828;
-    background-size: cover;
-}
-
-.Yoru img:hover{
-    -webkit-filter: brightness(50%);
-    transition: .5s;
-    transform: scale(110%);
-}
-
-.Yoru img:active{
-    transform: scale(100%);
-}
-
-.Neon img{
-    width: 300px;
-    height: 300px;
-    margin: 50px;
-    border-radius: 50px;
-    cursor: pointer;
-    border: 5px #282828;
-    background-size: cover;
-}
-
-.Neon img:hover{
-    -webkit-filter: brightness(50%);
-    transition: .5s;
-    transform: scale(110%);
-}
-
-.Neon img:active{
+.boss img:active{
     transform: scale(100%);
 }

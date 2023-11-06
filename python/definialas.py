@@ -244,20 +244,28 @@ def goto(place):
             print('gyalogolsz')
             time.sleep(1)
         if randint(1, 3) == 1:
-            rand = randint(1, 10)
+            
+            if hour >= 18: 
+                rand = randint(1, 10)
+            else: 
+                rand = randint(1, 9)
+            
             if rand in range(1, 5):
-                print('egy goblin állja az utad')
+                print('Egy goblin állja utadat.')
                 fight(goblin)
 
             if rand in range(5, 8):
-                print('egy ogre állja az utad')
+                print('Egy goblin állja utadat.')
                 fight(ogre)
+
             if rand in range(8, 10):
-                print('egy bandita állj az utad')
+                print('Egy bandita állja utadat.')
                 fight(bandit)
+
             if rand == 10:
-                print('egy vámpír állj az utad')
+                print('Egy vámpír állja utadat.')
                 fight(vampir)
+
         ido(30)
     nowplace = place
     print('Sikeresen megérkeztél ide: {nowplace}')
@@ -266,7 +274,7 @@ def goto(place):
 
 
 def field():
-    if nowplace == 'field':
+    if not nowplace == 'field':
         goto('field')
     print('1...gyógynövényt szedni')
     print('1...Legyőzni a bosst')
@@ -279,7 +287,7 @@ def field():
 
 
 def forest():
-    if nowplace == 'forest':
+    if not nowplace == 'forest':
         goto('forest')
     print('1..fát vágni')
     print('2...legyőzni a bosst')
@@ -292,7 +300,7 @@ def forest():
 
 
 def mine():
-    if nowplace == 'mine':
+    if not nowplace == 'mine':
         goto('mine')
     print('1..válogatni')
     print('2...legyőzni a bosst')

@@ -134,9 +134,13 @@ def ido(eltMinute=0, eltHour=0, eltDay=0):
         minute = 0
 
 
-def repdec(amount):
-    player.rep -= amount
-    if player.rep < 50:
+def repchange(amount):
+    player.rep += amount
+    if amount < 0:
+        print(f'Megbecsültséged ennyivel csökkent: {abs({amount})}.')
+    if amount > 0:
+        print(f'Megbecsültséged ennyivel nőtt: {amount}.')
+    if player.rep < -50:
         print('Annyira utálnak az emberek, hogy elküldtek egy különös helyre zuhanyozni.')
         print('Víz helyett valami furcsa gáz jött a csapból.')
         print('elálmosodtál')
@@ -161,7 +165,7 @@ def fight(enemy):
             playerdamage = player.strength * player.weapon - enemy.shield + randint(-2, 2)
             if playerdamage < 0:
                 playerdamage = 0
-            print(f'te {playerdamage} -et sebeztél')
+            print(f'Te {playerdamage}-et sebeztél.')
             takeDamage(enemydamage)
             enemy.hp -= playerdamage
             input('ENTER')

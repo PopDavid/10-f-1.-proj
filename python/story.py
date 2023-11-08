@@ -10,33 +10,41 @@ from city import *
 foszereplo = 'JÁTÉKOS'
 
 def bev():
-    Slowtype(f'[{foszereplo}]: Végre elérkezett a nap!')
+    # print('━━━━━━━━━━━━━━━━━━━━━━')
+    # print('Játék címe')
+    # print('━━━━━━━━━━━━━━━━━━━━━━')
+    # Slowtype('\nEz a játék a középkorba repíti vissza a játékost,\nki a főszereplő útját bejárva próbál harcossá, \nvalamint a város hősévé válni.')
+    # time.sleep(5)
+    # os.system('cls')
+    # time.sleep(2)
 
-    time.sleep(2)
-    Slowtype(f'[{foszereplo}]: Eljött az én időm!')
-    time.sleep(2)
-    Slowtype('[???]: Jó reggelt!')
-    time.sleep(1.5)
-    Slowtype('ZzZzZzZzZzZz')
-    time.sleep(1.5)
-    Slowtype(f'[{foszereplo}]: Megtöröm a gonosz sárkány uralmát!')
-    time.sleep(2)
-    Slowtype('[???]: Ébresztő!')
-    time.sleep(1.5)
-    Slowtype('ZzZzZzZzZzZz')
-    time.sleep(1)
-    input('\nFelébredés az ENTER megnyomásával >>')
-    os.system('cls')
+    # Slowtype(f'[{foszereplo}]: Végre elérkezett a nap!')
 
-    time.sleep(1)
-    Slowtype('[SZOLGA]: Jó reggelt hétalvók, ideje felkelni.')
-    time.sleep(2)
-    Slowtype('[SZOLGA]: Ki nem dolgozik elég keményen mehet az utcára aludni! Ez a király üzenete!')
-    time.sleep(1.5)
-    Slowtype('[SZOLGA]: Most pedig irány munkára!')
-    time.sleep(1)
-    input('\nTovábbhaladás az ENTER megnyomásával >>')
-    os.system('cls')
+    # time.sleep(2)
+    # Slowtype(f'[{foszereplo}]: Eljött az én időm!')
+    # time.sleep(2)
+    # Slowtype('[???]: Jó reggelt!')
+    # time.sleep(1.5)
+    # Slowtype('ZzZzZzZzZzZz')
+    # time.sleep(1.5)
+    # Slowtype(f'[{foszereplo}]: Megtöröm a gonosz sárkány uralmát!')
+    # time.sleep(2)
+    # Slowtype('[???]: Ébresztő!')
+    # time.sleep(1.5)
+    # Slowtype('ZzZzZzZzZzZz')
+    # time.sleep(1)
+    # input('\nFelébredés az ENTER megnyomásával >>')
+    # os.system('cls')
+
+    # time.sleep(1)
+    # Slowtype('[SZOLGA]: Jó reggelt hétalvók, ideje felkelni.')
+    # time.sleep(2)
+    # Slowtype('[SZOLGA]: Ki nem dolgozik elég keményen mehet az utcára aludni! Ez a király üzenete!')
+    # time.sleep(1.5)
+    # Slowtype('[SZOLGA]: Most pedig irány munkára!')
+    # time.sleep(1)
+    # input('\nTovábbhaladás az ENTER megnyomásával >>')
+    torles()
 
     nowplace = 'field'
 
@@ -60,6 +68,8 @@ def kikialtas():
     Slowtype('[DOBOS]: Ki vállalkozni szeretne e nemes feladatra a király elé járuljék!')
     
     input('\nKirály elé járulás az ENTER megnyomásával >>')
+    
+    torles()
 
     print('Sikeresen megérkeztél várba.')
 
@@ -102,7 +112,6 @@ def kikialtas():
                 print('━━━━━━━━━━━━━━━━━━━━━━')
                 print('1...Felséges királyom, életem-halálom kezedbe ajánlom!')
                 print('2...Hallod-e, király?')
-                print('3...[Nem köszöntöd]')
                 print('━━━━━━━━━━━━━━━━━━━━━━')
 
                 val = ''

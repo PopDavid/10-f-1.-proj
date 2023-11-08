@@ -12,10 +12,11 @@ Earmor = 0
 
 
 def displayerstat(money):
-    print('---------------------------------------')
-    print(f'HP: {player.hp}, Védésém: {player.shield}, Fegyver: {player.weapon} Erő: {player.strength}\nSebesseg {player.speed}, éberség: {player.eberseg}, ügyesseg: {player.agility}')
-    print('pénz:', money)
-    print('---------------------------------------')
+    print('━━━━━━━━━━━━━━━━━━━━━━')
+    print(f'HP: {player.hp}, Védésém: {player.shield}, Fegyver: {player.weapon} Erő: {player.strength}\nSebesség: {player.speed}, Éberség: {player.eberseg}, Ügyesseg: {player.agility}')
+    print('Pénz:', money)
+    print('━━━━━━━━━━━━━━━━━━━━━━')
+    print('\n')
 
 
 def heal(amount):
@@ -28,12 +29,13 @@ def heal(amount):
 def takeDamage(value):
     player.hp -= value
     if player.hp < 1:
-        print('az életerőd lement 0 alá')
-        print('elkezdtél szédülni')
-        print('elálmosodtál')
-        print('elaludtál')
-        print('Nem keltél fel megint')
-        print('Vége')
+        print('Belehaltál sérüléseidbe.')
+        time.sleep(2)
+        print('\n')
+        print('━━━━━━━━━━━━━━━━━━━━━━')
+        print('VÉGE A JÁTÉKNAK.')
+        print('━━━━━━━━━━━━━━━━━━━━━━')
+        
         sys.exit()
 
 
@@ -105,6 +107,11 @@ def getItem(type, item):
 
 def torles():
     os.system('cls')
+    displayerstat(money)
+
+def tovabblepes():
+    print('\n\n\n')
+    displayerstat(money)
 
 
 def Slowtype(text):
@@ -124,11 +131,11 @@ def ido(eltMinute=0, eltHour=0, eltDay=0):
         hour += 1
 
     if not hour < 22:
-        if nowplace == 'city':
-            print('elmentél a szállásra aludni.')
+        if nowplace == 'city' or 'castle':
+            print('Elmentél a szállásra aludni.')
             player.eberseg = 100
         else:
-            print('A vadonban aludtál')
+            print('A vadonban aludtál.')
             player.eberseg == 75
         hour = 6
         minute = 0
@@ -137,7 +144,7 @@ def ido(eltMinute=0, eltHour=0, eltDay=0):
 def repchange(amount):
     player.rep += amount
     if amount < 0:
-        print(f'Megbecsültséged ennyivel csökkent: {abs({amount})}.')
+        print(f'Megbecsültséged ennyivel csökkent: {-amount}.')
     if amount > 0:
         print(f'Megbecsültséged ennyivel nőtt: {amount}.')
     if player.rep < -50:

@@ -3,6 +3,7 @@ from variables import *
 from definialas import *
 from random import choice
 import time
+from story import foszereplo
 
 
 def collectmoney():
@@ -256,7 +257,7 @@ def collectingFirst():
     Slowtype('(Gondolat): Remélem ezért jutalomban fogok részesülni!')
     time.sleep(2)
     nowplace = 'field'
-    print('Sikeresen megérkeztél ide: {nowplace}')
+    print('Megérkeztél a mezőre.')
     torles()
     esely = 5  - player.speed
     if esely < 1:
@@ -274,9 +275,9 @@ def collectingFirst():
             torles()
         else:
             need = 0
-            Slowtype(f'[]Megtaláltam a {find} növényt. Megvan amiért jöttem!')
+            Slowtype(f'[{foszereplo}]Megtaláltam a {find} növényt. Megvan amiért jöttem!')
             time.sleep(1)
-            input('\Visszatérés a városba az ENTER megnyomásával >>')
+            input('\nVisszatérés a városba az ENTER megnyomásával >>')
             torles()
             nowplace = 'city'
             print('Leadtad a gyógynövényeket, 50 pénz üti markod.')

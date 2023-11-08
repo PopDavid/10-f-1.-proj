@@ -124,7 +124,8 @@ PAL = [
     'bekrepál',
     'strapál',
     'rúgkapál',
-    'kupál'
+    'kupál',
+    'szlopál'
 ]
 
 pal = [
@@ -146,7 +147,8 @@ pal = [
     'bekrepál',
     'strapál',
     'rúgkapál',
-    'kupál'
+    'kupál',
+    'szlopál'
 ]
 
 PLACE = [

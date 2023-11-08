@@ -151,6 +151,7 @@ h1{
     margin-left: 64px;
     padding: 30px;
     text-decoration: underline;
+    text-align: center;
 }
 
 .boss{
@@ -179,14 +180,51 @@ h1{
 .bossinfo{
     margin-bottom: 0;
     position: absolute;
-    top: 200px;
-    left: 325px;
+
     width: 100px;
     height: 100px;
     font-size: 25px;
     visibility:hidden;
 }
+#dragonbossinfo{
+    top: 200px;
+    left: 325px;
+}
+#minebossinfo{
+    left: 850px;
+    top: 200px
+}
+#forestbossinfo{
+    left: 1350px;
+    top: 200px;
+}
+#fieldbossinfo{
+    top: 200px;
+    left: 1875px;
+}
+#goblininfo{
+    top: 700px;
+    left: 300px;
+}
+#ogreinfo{
+    top: 700px;
+    left: 710px;
+}
+#banditinfo{
+    top: 700px;
+    left: 1120px;
+}
+#cerberusinfo{
+    top: 700px;
+    left: 1530px;
+}
+#vampirinfo{
+    top: 700px;
+    left: 1850px;
+}
 button{
     border: none;
     background: #fff;
 }
+
+

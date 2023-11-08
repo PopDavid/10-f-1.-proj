@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Itemek</title>
-    <link rel="stylesheet" href="/html/style.css">
+    <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
     <link rel="canonical" href="https://www.dafont.com/spaceport-one.font">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -24,7 +24,7 @@
     <header class="navheader">
         <div class="nav-logo">
             <a href="/index.html">
-                <img src="/html/imgs/diamond.s">
+                <img src="imgs/diamond.s">
             </a>
         </div>
         <a href="#" class="toggle-button">
@@ -34,8 +34,8 @@
         </a>
         <div class="nav-links">
             <ul>
-                <li><a href="/html/items.html">Itemek</a></li>
-                <li><a href="/html/boss.oldal.html">Bossok</a></li>
+                <li><a href="items.html">Itemek</a></li>
+                <li><a href="boss.oldal.html">Bossok</a></li>
             </div>
         </header>
 
@@ -43,78 +43,70 @@
 
         <h1>Kardok:</h1>
         <div class="row">
-            <button class="boss col" onclick="bossinfo('fakardinfo')"><img src="/html/imgs/fakard.png"></button>
+            <button class="boss col" onclick="bossinfo('fakardinfo')"><img src="imgs/fakard.png"></button>
             <table class="bossinfo o1 s1" id='fakardinfo'>
-                <tr><td>Életerő: 250</td></tr>
-                <tr><td>Erő: 45</td></tr>
-                <tr><td>Sebessége: 10 </td></tr>
-                <tr><td>pajzs: 50 </td></tr>
+                <tr><td>Élesség: 1</td></tr>
+                <tr><td>ár: 0</td></tr>
             </table>
-            <button class="boss col" onclick="bossinfo('marvanykardinfo')"><img src="/html/imgs/Márványkard.png"></button>
+            <button class="boss col" onclick="bossinfo('marvanykardinfo')"><img src="imgs/Márványkard.png"></button>
             <table class="bossinfo o1 s2" id='marvanykardinfo'>
-                <tr><td>Életerő: 50</td></tr>
-                <tr><td>Erő: 20</td></tr>
-                <tr><td>Sebessége: 4 </td></tr>
-                <tr><td>pajzs: 25 </td></tr>
+                <tr><td>Élesség: 3</td></tr>
+                <tr><td>ár: 35</td></tr>
             </table>
-            <button class="boss col" onclick="bossinfo('vaskardinfo')"><img src="/html/imgs/vaskard.png"></button>
+            <button class="boss col" onclick="bossinfo('vaskardinfo')"><img src="imgs/vaskard.png"></button>
             <table class="bossinfo o1 s3" id='vaskardinfo'>
-                <tr><td>Életerő: 100</td></tr>
-                <tr><td>Erő: 25</td></tr>
-                <tr><td>Sebessége: 2 </td></tr>
-                <tr><td>pajzs: 35 </td></tr>
+                <tr><td>Élesség: 6</td></tr>
+                <tr><td>ár: 55</td></tr>
             </table>
-            <button class="boss col" onclick="bossinfo('obszidianel')"><img src="/html/imgs/obszidianel.png"></button>
+            <button class="boss col" onclick="bossinfo('obszidianel')"><img src="imgs/obszidianel.png"></button>
             <table class="bossinfo o1 s4" id='obszidianel'>
-                <tr><td>Életerő: 75</td></tr>
-                <tr><td>Erő: 23</td></tr>
-                <tr><td>Sebessége: 6 </td></tr>
-                <tr><td>pajzs: 50 </td></tr>
+                <tr><td>Élesség: 11</td></tr>
+                <tr><td>ár: 110</td></tr>
             </table>
         </div>
         <div>
             <h1>Páncélok:</h1>
             <div class="row">
-                <button class="boss col" onclick="bossinfo('fapancelinfo')"><img src="/html/imgs/fapancel.png"></button>
+                <button class="boss col" onclick="bossinfo('fapancelinfo')"><img src="imgs/fapancel.png"></button>
                 <table class="bossinfo o2 s1" id='fapancelinfo'>
                     <tr><td>Védelem: 1</td></tr>
-                    <tr><td>ár: </td></tr>
+                    <tr><td>ár: 55</td></tr>
                 </table>
-                <button class="boss col" onclick="bossinfo('marvanypancelinfo')"><img src="/html/imgs/Marvanypancel.png"></button>
+                <button class="boss col" onclick="bossinfo('marvanypancelinfo')"><img src="imgs/Marvanypancel.png"></button>
                 <table class="bossinfo o2 s2" id='marvanypancelinfo'>
                     <tr><td>Védelem: 2</td></tr>
-                    <tr><td>ár: </td></tr>
+                    <tr><td>ár: 105</td></tr>
                 </table>
-                <button class="boss col" onclick="bossinfo('vaspancelinfo')"><img src="/html/imgs/vaspancel.png"></button>
+                <button class="boss col" onclick="bossinfo('vaspancelinfo')"><img src="imgs/vaspancel.png"></button>
                 <table class="bossinfo o2 s3" id='vaspancelinfo'>
                     <tr><td>Védelem: 5</td></tr>
-                    <tr><td>ár: </td></tr>
+                    <tr><td>ár: 210</td></tr>
                 </table>
-                <button class="boss col" onclick="bossinfo('obszidianpancel')"><img src="/html/imgs/obszidiánpáncél.png"></button>
+                <button class="boss col" onclick="bossinfo('obszidianpancel')"><img src="imgs/obszidiánpáncél.png"></button>
                 <table class="bossinfo o2 s4" id='obszidianpancel'>
                     <tr><td>Védelem: 11</td></tr>
-                    <tr><td>ár: </td></tr>
+                    <tr><td>ár: 320</td></tr>
                 </table>
         </div>
         <div>
             <h1>Pajzsok:</h1>
             <div class="row">
-                <button class="boss col" onclick="bossinfo('fapajzsinfo')"><img src="/html/imgs/fapajzs.png"></button>
+                <button class="boss col" onclick="bossinfo('fapajzsinfo')"><img src="imgs/fapajzs.png"></button>
                 <table class="bossinfo o3 s1" id='fapajzsinfo'>
                     <tr><td>Védelem: 1</td></tr>
                     <tr><td>ár: 25</td></tr>
                 </table>
-                <button class="boss col" onclick="bossinfo('marvanypajzsinfo')"><img src="/html/imgs/marvanypajzs.png"></button>
+                <button class="boss col" onclick="bossinfo('marvanypajzsinfo')"><img src="imgs/marvanypajzs.png"></button>
                 <table class="bossinfo o3 s2" id='marvanypajzsinfo'>
                     <tr><td>Védelem: 2</td></tr>
                     <tr><td>ár: 55</td></tr>
                 </table>
-                <button class="boss col" onclick="bossinfo('vaspajzsinfo')"><img src="/html/imgs/vaspajzs.jpeg"></button>
+                <button class="boss col" onclick="bossinfo('vaspajzsinfo')"><img src="imgs/vaspajzs.jpeg"></button>
                 <table class="bossinfo o3 s3" id='vaspajzsinfo'>
                     <tr><td>Védelem: 5</td></tr>
                     <tr><td>ár: 105</td></tr>
                 </table>
-                <button class="boss col" onclick="bossinfo('obszidianpajzs')"><img src="/html/imgs/obszidiánpajzs.png"></button>
+                <button class="boss col" onclick="bossinfo('obszidianpajzs')"><img src="imgs/obszidiánpajzs.png"></button>
                 <table class="bossinfo o3 s4" id='obszidianpajzs'>
                     <tr><td>Védelem: 11</td></tr>
                     <tr><td>ár: 210</td></tr>

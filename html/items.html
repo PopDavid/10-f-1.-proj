@@ -43,31 +43,98 @@
 
         <h1>Kardok:</h1>
         <div class="row">
-            <a class="boss col"><img src="imgs/fakard.png"></a>
-            <table class="bossinfo">
+            <button class="boss col" onclick="bossinfo('fakardinfo')"><img src="/html/imgs/fakard.png"></button>
+            <table class="bossinfo o1 s1" id='fakardinfo'>
                 <tr><td>Életerő: 250</td></tr>
                 <tr><td>Erő: 45</td></tr>
                 <tr><td>Sebessége: 10 </td></tr>
-                <tr><td>pajzs: 50 </td></tr>           
-            <table>
-            <a class="boss col"><img src="/html/imgs/Márványkard.png"></a>
-            <a class="boss col"><img src="/html/imgs/obszidianel.png"></a>
-            <a class="boss col"><img src="/html/imgs/vaskard.png"></a>
+                <tr><td>pajzs: 50 </td></tr>
+            </table>
+            <button class="boss col" onclick="bossinfo('marvanykardinfo')"><img src="/html/imgs/Márványkard.png"></button>
+            <table class="bossinfo o1 s2" id='marvanykardinfo'>
+                <tr><td>Életerő: 50</td></tr>
+                <tr><td>Erő: 20</td></tr>
+                <tr><td>Sebessége: 4 </td></tr>
+                <tr><td>pajzs: 25 </td></tr>
+            </table>
+            <button class="boss col" onclick="bossinfo('vaskardinfo')"><img src="/html/imgs/vaskard.png"></button>
+            <table class="bossinfo o1 s3" id='vaskardinfo'>
+                <tr><td>Életerő: 100</td></tr>
+                <tr><td>Erő: 25</td></tr>
+                <tr><td>Sebessége: 2 </td></tr>
+                <tr><td>pajzs: 35 </td></tr>
+            </table>
+            <button class="boss col" onclick="bossinfo('obszidianel')"><img src="/html/imgs/obszidianel.png"></button>
+            <table class="bossinfo o1 s4" id='obszidianel'>
+                <tr><td>Életerő: 75</td></tr>
+                <tr><td>Erő: 23</td></tr>
+                <tr><td>Sebessége: 6 </td></tr>
+                <tr><td>pajzs: 50 </td></tr>
+            </table>
         </div>
         <div>
             <h1>Páncélok:</h1>
-                <p><a class="boss"><img src="/html/imgs/fapancel.png"></a></p>
-                <p><a class="boss"><img src="/html/imgs/marvanypancel.png"></a></p>
-                <p><a class="boss"><img src="/html/imgs/obszidiánpáncél.png"></a></p>
-                <p><a class="boss"><img src="/html/imgs/vaspancel.png"></a></p>
+            <div class="row">
+                <button class="boss col" onclick="bossinfo('fapancelinfo')"><img src="/html/imgs/fapancel.png"></button>
+                <table class="bossinfo o2 s1" id='fapancelinfo'>
+                    <tr><td>Életerő: 250</td></tr>
+                    <tr><td>Erő: 45</td></tr>
+                    <tr><td>Sebessége: 10 </td></tr>
+                    <tr><td>pajzs: 50 </td></tr>
+                </table>
+                <button class="boss col" onclick="bossinfo('marvanypancelinfo')"><img src="/html/imgs/Marvanypancel.png"></button>
+                <table class="bossinfo o2 s2" id='marvanypancelinfo'>
+                    <tr><td>Életerő: 50</td></tr>
+                    <tr><td>Erő: 20</td></tr>
+                    <tr><td>Sebessége: 4 </td></tr>
+                    <tr><td>pajzs: 25 </td></tr>
+                </table>
+                <button class="boss col" onclick="bossinfo('vaspancelinfo')"><img src="/html/imgs/vaspancel.png"></button>
+                <table class="bossinfo o2 s3" id='vaspancelinfo'>
+                    <tr><td>Életerő: 100</td></tr>
+                    <tr><td>Erő: 25</td></tr>
+                    <tr><td>Sebessége: 2 </td></tr>
+                    <tr><td>pajzs: 35 </td></tr>
+                </table>
+                <button class="boss col" onclick="bossinfo('obszidianpancel')"><img src="/html/imgs/obszidiánpáncél.png"></button>
+                <table class="bossinfo o2 s4" id='obszidianpancel'>
+                    <tr><td>Életerő: 75</td></tr>
+                    <tr><td>Erő: 23</td></tr>
+                    <tr><td>Sebessége: 6 </td></tr>
+                    <tr><td>pajzs: 50 </td></tr>
+                </table>
         </div>
         <div>
             <h1>Pajzsok:</h1>
-                <p><a class="boss"><img src="/html/imgs/fapajzs.png"></a></p>
-                <p><a class="boss"><img src="/html/imgs/marvanypajzs.png"></a></p>
-                <p><a class="boss"><img src="/html/imgs/obszidiánpajzs.png"></a></p>
-                <p><a class="boss"><img src="/html/imgs/vaspajzs.jpeg"></a></p>
-        </div>   
+            <div class="row">
+                <button class="boss col" onclick="bossinfo('fapajzsinfo')"><img src="/html/imgs/fapajzs.png"></button>
+                <table class="bossinfo o3 s1" id='fapajzsinfo'>
+                    <tr><td>Életerő: 250</td></tr>
+                    <tr><td>Erő: 45</td></tr>
+                    <tr><td>Sebessége: 10 </td></tr>
+                    <tr><td>pajzs: 50 </td></tr>
+                </table>
+                <button class="boss col" onclick="bossinfo('marvanypajzsinfo')"><img src="/html/imgs/marvanypajzs.png"></button>
+                <table class="bossinfo o3 s2" id='marvanypajzsinfo'>
+                    <tr><td>Életerő: 50</td></tr>
+                    <tr><td>Erő: 20</td></tr>
+                    <tr><td>Sebessége: 4 </td></tr>
+                    <tr><td>pajzs: 25 </td></tr>
+                </table>
+                <button class="boss col" onclick="bossinfo('vaspajzsinfo')"><img src="/html/imgs/vaspajzs.jpeg"></button>
+                <table class="bossinfo o3 s3" id='vaspajzsinfo'>
+                    <tr><td>Életerő: 100</td></tr>
+                    <tr><td>Erő: 25</td></tr>
+                    <tr><td>Sebessége: 2 </td></tr>
+                    <tr><td>pajzs: 35 </td></tr>
+                </table>
+                <button class="boss col" onclick="bossinfo('obszidianpajzs')"><img src="/html/imgs/obszidiánpajzs.png"></button>
+                <table class="bossinfo o3 s4" id='obszidianpajzs'>
+                    <tr><td>Életerő: 75</td></tr>
+                    <tr><td>Erő: 23</td></tr>
+                    <tr><td>Sebessége: 6 </td></tr>
+                    <tr><td>pajzs: 50 </td></tr>
+                </table>
 
     </body>
 </html>

@@ -137,18 +137,12 @@ def ido(eltMinute=0, eltHour=0, eltDay=0):
 def repchange(amount):
     player.rep += amount
     if amount < 0:
-        print(f'Megbecsültséged ennyivel csökkent: {abs({amount})}.')
+        print(f'Megbecsültséged ennyivel csökkent: {-amount}.')
     if amount > 0:
         print(f'Megbecsültséged ennyivel nőtt: {amount}.')
     if player.rep < -50:
-        print('Annyira utálnak az emberek, hogy elküldtek egy különös helyre zuhanyozni.')
-        print('Víz helyett valami furcsa gáz jött a csapból.')
-        print('elálmosodtál')
-        print('elaludtál')
-        print('soha többé nem keltél fel.')
-        print('Vége')
-        for i in range(1):
-            print('r garbjefjoafjabfja')
+        # prison()
+        pass
         sys.exit()
 
 

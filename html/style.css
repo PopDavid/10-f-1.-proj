@@ -226,5 +226,26 @@ button{
     border: none;
     background: #fff;
 }
+.o1{
+    top: 200px;
+}
+.o2{
+    top: 700px;
+}
+.o3{
+    top: 1200px;
+}
+.s1{
+    left: 325px;
+}
+.s2{
+    left: 850px;
+}
+.s3{
+    left: 1350px;
+}
+.s4{
+    left: 1875px;
+}
 
 

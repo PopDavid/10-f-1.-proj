@@ -61,10 +61,74 @@ def kikialtas():
     
     input('\nKirály elé járulás az ENTER megnyomásával >>')
 
-    print('Sikeresen megérkeztél ide: vár')
+    print('Sikeresen megérkeztél várba.')
+
+    Slowtype(f'[KIRÁLY]: Őrök! Hívják be a következő látogatót!')
+    Slowtype(f'[ŐRÖK]: Kérem jöjjön be a következő!')
 
 
+    print('\nHogy köszöntöd a királyt?')
+    print('━━━━━━━━━━━━━━━━━━━━━━')
+    print('1...Felséges királyom, életem-halálom kezedbe ajánlom!')
+    print('2...Hallod-e, király?')
+    print('3...[Nem köszöntöd]')
+    print('━━━━━━━━━━━━━━━━━━━━━━')
+    
+    val = ''
+    while val != (1 or 2 or 3):
+        val = input('Választásod: ')
+        match val:
+            case '1':
+                Slowtype(f'Felséges királyom, életem-halálom kezedbe ajánlom! Vállalkoznék a sárkány legyőzésére!')
+                repchange(2)
+                print('A királlyal mindig tisztelettel beszélj!')
+            
+            case '2':
+                Slowtype(f'[{foszereplo}]: Hallod-e király? Vállalkoznék a sárkány legyőzésére!')
+                Slowtype(f'[ŐR]: A király nem ilyen hangnemet érdemel!')
+                print(f'Megütött az őr, ezzel 2-t sebezve.')
+                takeDamage(2)
+                
+                repchange(-10)
+                print('A királlyal mindig tisztelettel beszélj!')
+            
+            case '3':
+                Slowtype(f'[{foszereplo}]: Vállalkoznék a sárkány legyőzésére!')
+                Slowtype(f'[ŐR]: Kihez beszélsz?')
+                Slowtype(f'[{foszereplo}]: Őfelségéhez.')
+                Slowtype(f'[{foszereplo}]: Akkor köszöntsd a királyt!')
 
+                print('\nHogy köszöntöd a királyt?')
+                print('━━━━━━━━━━━━━━━━━━━━━━')
+                print('1...Felséges királyom, életem-halálom kezedbe ajánlom!')
+                print('2...Hallod-e, király?')
+                print('3...[Nem köszöntöd]')
+                print('━━━━━━━━━━━━━━━━━━━━━━')
+
+                val = ''
+                while val != (1 or 2):
+                    val = input('Választásod: ')
+
+                    match val:
+                        case '1':
+                            Slowtype(f'Felséges királyom, életem-halálom kezedbe ajánlom! Vállalkoznék a sárkány legyőzésére!')
+                            repchange(2)
+                            print('A királlyal mindig tisztelettel beszélj!')
+                        
+                        case '2':
+                            Slowtype(f'[{foszereplo}]: Hallod-e király? Vállalkoznék a sárkány legyőzésére!')
+                            Slowtype(f'[ŐR]: A király nem ilyen hangnemet érdemel!')
+                            print(f'Megütött az őr, ezzel 2-t sebezve.')
+                            takeDamage(2)
+                            
+                            repchange(-10)
+                            print('A királlyal mindig tisztelettel beszélj!')
+
+                        case _:
+                            print('Érvénytelen választ adtál meg!')
+
+            case _:
+                print('Érvénytelen választ adtál meg!')
 bev()
 
 

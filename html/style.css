@@ -5,7 +5,6 @@ body{
     margin: 0;
     padding: 0;
 }
-
 .navheader{
     background-color: #282828;
     color: white;
@@ -185,9 +184,9 @@ h1{
     width: 100px;
     height: 100px;
     font-size: 25px;
-    visibility: hidden;
+    visibility:hidden;
 }
-.bossinfo:hover + .boss img:hover{
-    background: red;
-    visibility: visible;
+button{
+    border: none;
+    background: #fff;
 }

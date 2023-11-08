@@ -148,14 +148,8 @@ def repchange(amount):
     if amount > 0:
         print(f'Megbecsültséged ennyivel nőtt: {amount}.')
     if player.rep < -50:
-        print('Annyira utálnak az emberek, hogy elküldtek egy különös helyre zuhanyozni.')
-        print('Víz helyett valami furcsa gáz jött a csapból.')
-        print('elálmosodtál')
-        print('elaludtál')
-        print('soha többé nem keltél fel.')
-        print('Vége')
-        for i in range(1):
-            print('r garbjefjoafjabfja')
+        # prison()
+        pass
         sys.exit()
 
 
@@ -216,8 +210,7 @@ def fight(enemy):
             vampir.hp = 20
 
     money += foundmoney
-
-
+    
 def goto(place):
     global nowplace
     if not str(place) in PLACE:
@@ -283,7 +276,6 @@ def goto(place):
     input('ENTER')
     torles()
 
-
 def field():
     if not nowplace == 'field':
         goto('field')
@@ -296,7 +288,6 @@ def field():
         case '2':
             fieldBossFight()
 
-
 def forest():
     if not nowplace == 'forest':
         goto('forest')
@@ -308,7 +299,6 @@ def forest():
             forestMiniGame()
         case '2':
             forestBossFight()
-
 
 def mine():
     if not nowplace == 'mine':

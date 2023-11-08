@@ -13,9 +13,6 @@ function bossinfo(boss)
     console.log(isvisible(boss));
 
 }
-
-
-
 function isvisible(elem){
     let style = document.getElementById(elem)
     console.log(style.style.visibility)

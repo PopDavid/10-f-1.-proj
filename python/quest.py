@@ -444,8 +444,8 @@ def questboard():
         print(i, '...', quest)
     questindex = int(input('Melyiket szeretnéd megcsinálni? ')) - 2
 
-    # while questindex > len(universialquest):
-    # questindex = int(input('Melyiket szeretnéd megcsinálni? '))-2
+    while questindex > len(universialquest):
+        questindex = int(input('Melyiket szeretnéd megcsinálni? '))-2
     match questindex:
         case -1:
             sidequest()

@@ -573,6 +573,7 @@ def PALjatek():
         Palvolt = True
     else:
         Slowtype(f'özvegy: Nagyon jól teljesítettél.\nözvegy pontosan {score} szót mondtál helyesen')
+    input('Vissza a várba ENTER-rel')
 
 def sidequest():
     match currentquest:
@@ -596,7 +597,7 @@ def hunting():
     input('Indulás ENTER-rel')
     torles(money)
     goto('field')
-    Slowtype('vadászok: a cél 10 vadat elejteni.')
+    Slowtype('vadászok: a cél 5 vadat elejteni.')
     input('ENTER-rel kezdődik a vadászat')
     vadak = 0
     while vadak != 5:
@@ -618,7 +619,7 @@ def hunting():
             print(f'Eltaláltad, már csak {5-vadak} prédát kell meglőnöd.')
         else:
             print(f'Nem találtad el, még {5-vadak} prédát kell meglőnöd.')
-        input('Követekző keresése ENTER-rel')
+        input('Következő keresése ENTER-rel')
     print('eladtad a vadat a vadászoknak, kaptál érte 50 pénzt')
     money += 50
     currentquest = 'gyűjtőgetés'
@@ -683,6 +684,7 @@ def ogrehunt():
 
 def kingfollow():
     global money, currentquest, nowplace
+    torles(money)
     print('a király el szeretne látogatni a bányába. Őrséget keres maga mellé.')
     print('Jó pénzt ígér ha én is segítek megvédelni.')
     print('jelentkeztél, elindultatok')
@@ -773,6 +775,7 @@ def swordInStone():
     global money
     if player.strength < 5:
         print('Nem vagy elég erős ehhez. Lefáradtál a nagy próbálkozásban.')
+        input('Vissza a várba ENTER-rel')
         return 0
     print('nagy erőlködés után sikerült kihúzni a kardot.')
     if player.strength == 5:
@@ -828,13 +831,12 @@ def questboard():
             sidequest()
         case 0:
             PALjatek()
+
         case 1:
-            knightquest()
-        case 2:
             swordInStone()
-        case 3:
+        case 2:
             sleepingdragon()
-        case 4:
+        case 3:
             stealFromDragon()
         case 0:
             pass
@@ -1587,6 +1589,8 @@ def goto(place):
                     distance = 85
                 case 'mountain':
                     distance = 65
+                case 'dragonlayer':
+                    distance = 80
     while distance >= 0:
         if lo:
             distance -= 15
@@ -1809,7 +1813,6 @@ def castle():
     print('8...Küldetésfal')
     print('9...Várbörtön')
     print('10...Állatkereskedő')
-    print('11...Pénzt keresni a várban')
     print('0...Vár elhagyása')
     
     choice = ''

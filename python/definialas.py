@@ -15,6 +15,11 @@ def displayerstat(money):
     print('Pénz:', money)
     print('━━━━━━━━━━━━━━━━━━━━━━')
     print('\n')
+    print('━━━━━━━━━━━━━━━━━━━━━━')
+    print(f'HP: {player.hp}, Védésém: {player.shield}, Fegyver: {player.weapon} Erő: {player.strength}\nSebesség: {player.speed}, Éberség: {player.eberseg}, Ügyesseg: {player.agility}')
+    print('Pénz:', money)
+    print('━━━━━━━━━━━━━━━━━━━━━━')
+    print('\n')
 
 
 def heal(amount):
@@ -255,52 +260,69 @@ def goto(place):
             distance -= 5
             print('gyalogolsz')
             time.sleep(1)
-        if randint(1, 5) == 1:
-            
-            if hour >= 18: 
-                rand = randint(1, 10)
-            else: 
-                rand = randint(1, 9)
-            
+        if randint(1, 3) == 1:
+            rand = randint(1, 10)
             if rand in range(1, 5):
-                print('Egy goblin állja utadat.')
-                input('A küzdelem megkezdéséhez nyomj ENTER-t')
-                torles(money)
-
-                print(money)
+                print('egy goblin állja az utad')
                 fight(goblin)
 
             if rand in range(5, 8):
-                print('Egy goblin állja utadat.')
-                input('A küzdelem megkezdéséhez nyomj ENTER-t')
-                torles(money)
-
-                print(money)
+                print('egy ogre állja az utad')
                 fight(ogre)
 
             if rand in range(8, 10):
-                print('Egy bandita állja utadat.')
-                input('A küzdelem megkezdéséhez nyomj ENTER-t')
-                torles(money)
-
-                print(money)
+                print('egy bandita állj az utad')
                 fight(bandit)
 
             if rand == 10:
-                print('Egy vámpír állja utadat.')
-                input('A küzdelem megkezdéséhez nyomj ENTER-t')
-                torles(money)
-
-                print(money)
+                print('egy vámpír állj az utad')
                 fight(vampir)
 
         ido(30)
     nowplace = place
-    print(f'Sikeresen megérkeztél ide: {nowplace}')
-    input('ENTER-rel belépsz')
-    torles(money)
+    print('Sikeresen megérkeztél ide: {nowplace}')
+    input('ENTER')
+    torles()
 
 
+def field():
+    if nowplace == 'field':
+        goto('field')
+    print('1...gyógynövényt szedni')
+    print('1...Legyőzni a bosst')
+    val = input('Mit szeretnél csinálni')
+    match val:
+        case '1':
+            fieldMiniGame()
+        case '2':
+            fieldBossFight()
+
+
+def forest():
+    if nowplace == 'forest':
+        goto('forest')
+    print('1..fát vágni')
+    print('2...legyőzni a bosst')
+    val = input('Mit szeretnél csinálni')
+    match val:
+        case '1':
+            forestMiniGame()
+        case '2':
+            forestBossFight()
+
+
+def mine():
+    if nowplace == 'mine':
+        goto('mine')
+    print('1..válogatni')
+    print('2...legyőzni a bosst')
+    val = input('Mit szeretnél csinálni')
+    match val:
+        case '1':
+            mineMiniGame()
+        case '2':
+            mineBossFight()
+        
 if __name__ == '__main__':
     player.strength = 5
     player.weapon = 7

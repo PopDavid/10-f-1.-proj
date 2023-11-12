@@ -1,6 +1,8 @@
 from definialas import *
 del money
 from variables import money
+import time, os
+from random import randint
 
 ertek = 0
 

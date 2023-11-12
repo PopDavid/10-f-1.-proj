@@ -4,6 +4,284 @@ Eweapon = 0
 EShield = 0
 Earmor = 0
 ertek = 0
+
+
+
+piros = [1, 3, 5, 7, 9, 12, 14, 16, 18, 19, 21, 23, 25, 27, 30, 32, 34, 36 ]
+
+
+def egeszszambekeres(szoveg) -> int:
+    szam = ''
+    while not szam.isdecimal():
+        szam = input(szoveg)
+    return int(szam)
+
+def cont():
+     input('Press ENTER to continue')
+
+def rangeEgeszszambekeres(szoveg = ' ', min = 0, max = 10000):
+    szam = ' '
+    while True:
+        szam = egeszszambekeres(szoveg)
+        if szam < min or szam >max:
+            pass
+        else:
+            break
+    return int(szam)
+
+def menu():
+    print('1...Páros, páratlan')
+    print('2...kicsi, vagy nagy')
+    print('3...Tucatok')
+    print('4...3-mal oszthatóság ')
+    print('5...szamok')
+    print('6...Piros, Fekete')
+    print('0...Kilépés')
+    tipus = rangeEgeszszambekeres(szoveg = 'Melyiket válassza', min = 0, max = 6)
+    return tipus
+
+def sorsolas():
+    szam = randint(0, 36)
+    print(f'a sorsolt szám: {szam}')
+    return szam 
+
+def oddEven():
+    egyenleg = 0
+    print('1...Páros')
+    print('2...Páratlan')
+    print('0...Vissza')
+    tipus = rangeEgeszszambekeres(szoveg = 'Melyiket válassza', min = 0, max = 2)
+    torles(money)
+
+    match tipus:
+        case 0:
+            pass
+        
+        case 1:
+            Tet = tet()
+            nyeroszam = sorsolas()
+            if nyeroszam % 2 != 0 or nyeroszam == 0:
+                egyenleg -= Tet
+                print('vesztettél')
+            else:
+                egyenleg += Tet
+                print('Nyertél')
+        case 2: 
+            Tet = tet()
+            nyeroszam = sorsolas()
+            if nyeroszam % 2 == 0:
+                egyenleg -= Tet
+                print('vesztettél')
+            else:
+                egyenleg += Tet
+                print('Nyertél')
+    cont()
+    torles(money)
+    return egyenleg
+
+def tet():
+    tet = rangeEgeszszambekeres('Mennyi a tét? ')
+    print(f' \nA tét:{tet}')
+    return tet
+
+def smallBig():
+    egyenleg = 0
+    print('1...Kicsi(1-18)')
+    print('2...Nagy(19-36)')
+    print('0...Vissza')
+
+    tipus = rangeEgeszszambekeres(szoveg = 'Melyiket válassza', min = 0, max = 2)
+    torles(money)
+
+    match tipus:
+        case 0:
+            pass
+        
+        case 1:
+            Tet = tet()
+            nyeroszam = sorsolas()
+            if nyeroszam < 1 or nyeroszam > 18:
+                egyenleg -= Tet
+                print('vesztettél')
+            else:
+                egyenleg += Tet
+                print('Nyertél')
+        case 2: 
+            Tet = tet()
+            nyeroszam = sorsolas()
+            if nyeroszam < 19 or nyeroszam > 36:
+                egyenleg -= Tet
+                print('vesztettél')
+            else:
+                egyenleg += Tet
+                print('Nyertél')
+    cont()
+    torles(money)
+    return egyenleg
+
+def tucat():
+    egyenleg = 0
+    print('1...1-12')
+    print('2...13-24')
+    print('3...25-36')
+    print('0...Vissza')
+
+    tipus = rangeEgeszszambekeres(szoveg = 'Melyiket válassza', min = 0, max = 3)
+    torles(money)
+
+    match tipus:
+        case 0:
+            pass
+        case 1:
+            Tet = tet()
+            nyeroszam = sorsolas()
+            if nyeroszam < 0 or nyeroszam >12:
+                egyenleg -= Tet
+                print('vesztettél')
+            else:
+                egyenleg += Tet * 2
+                print('Nyertél')
+        case 2:
+            Tet = tet()
+            nyeroszam = sorsolas()
+            if nyeroszam < 12 or nyeroszam >24:
+
+                egyenleg -= Tet
+                print('vesztettél')
+            else:
+                egyenleg += Tet * 2
+                print('Nyertél')            
+        case 3:
+            Tet = tet()
+            nyeroszam = sorsolas()
+            if nyeroszam < 24 or nyeroszam >36:
+
+                egyenleg -= Tet
+                print('vesztettél')
+            else:
+                egyenleg += Tet * 2
+                print('Nyertél')
+    cont()
+    torles(money)
+    return egyenleg
+
+def oszlop():
+    egyenleg = 0
+    print('1...1. Oszlop')
+    print('2...2. Oszlop')
+    print('3...3. Oszlop')
+    print('0...Vissza')
+
+    tipus = rangeEgeszszambekeres(szoveg = 'Melyiket válassza', min = 0, max = 3)
+    torles(money)
+
+    match tipus:
+        case 0:
+            pass
+        
+        case 1:
+            Tet = tet()
+            nyeroszam = sorsolas()
+            if nyeroszam %3 !=1:
+                egyenleg -= Tet
+                print('vesztettél')
+            else:
+                egyenleg += Tet * 2
+                print('Nyertél')
+        case 2:
+            Tet = tet()
+            nyeroszam = sorsolas()
+            if nyeroszam %3 !=2:
+                egyenleg -= Tet
+                print('vesztettél')
+            else:
+                egyenleg += Tet * 2
+                print('Nyertél')            
+        case 3:
+            Tet = tet()
+            nyeroszam = sorsolas()
+            if nyeroszam % 3 ==0 and nyeroszam != 0:
+                egyenleg -= Tet
+                print('vesztettél')
+            else:
+                egyenleg += Tet * 2
+                print('Nyertél')
+    cont()
+    torles(money)
+    return egyenleg
+    
+def oneNumber():
+    egyenleg = 0
+    tipus = rangeEgeszszambekeres('Melyik számra szeretne tenni: ', min = 0, max = 36)
+    torles(money)
+
+    Tet = tet()
+    nyeroszam = sorsolas()
+    if nyeroszam != tipus:
+        egyenleg -= Tet
+        print('vesztettél')
+    else:
+        egyenleg += Tet * 35
+        print('Nyertél')
+    cont()
+    torles(money)
+    return egyenleg
+
+def redBlack():
+    egyenleg = 0
+    print('1...Piros')
+    print('2...Fekete')
+    tipus = rangeEgeszszambekeres('Melyik szinre szeretne tenni: ', min = 0, max = 2)
+    torles(money)
+
+    Tet = tet()
+    nyeroszam = sorsolas()
+    match tipus:
+        case 0:
+            pass
+        case 1:
+            if nyeroszam in piros:
+                egyenleg += Tet 
+                print('Nyertél')
+            else:
+                egyenleg -= Tet
+                print('vesztettél')
+        case 2:
+            if nyeroszam not in piros:
+                egyenleg += Tet 
+                print('Nyertél')
+            else:
+                egyenleg -= Tet
+                print('vesztettél')
+    cont()
+    torles(money)
+    return egyenleg
+
+def casino():
+    global money
+    torles(money)
+    if money > 0:
+        tipus = menu()
+        torles(money)
+        match tipus:
+            case 1:
+                valt = oddEven()
+            case 2:
+                valt = smallBig()
+            case 3:
+                 valt = tucat()
+            case 4:
+                valt = oszlop()
+            case 5:
+                valt = oneNumber()
+            case 6:
+                valt = redBlack()
+            case 0:
+                torles(money)
+                castle()
+        money += valt
+    casino()
+
 class characters: #sablon
 
     def __init__(self) -> None:
@@ -14,7 +292,6 @@ class characters: #sablon
         self.weapon = 0
         self.shield = 0
         self.damage = self.strength * self.weapon
-        self.eberseg = 100
         self.rep = 0
 
 class Enemies:
@@ -103,9 +380,11 @@ def forest():
     print('1...fát vágni')
     if 'forestboss' in BOSSES:
         print('2...legyőzni a bosst')
+    if not isdragonalive:
+        print('2...Elhagyni a környéket')
     print('0...Vissza a várba')
     val = ' '
-    if 'forestboss' in BOSSES:
+    if 'forestboss' in BOSSES or not isdragonalive:
         while val not in map(str, range(0, 3)):
             val = input('Mit szeretnél csinálni: ')
     else:
@@ -116,19 +395,29 @@ def forest():
         case '1':
             forestMiniGame()
         case '2':
-            fight(forestboss)
-            BOSSES.remove('forestboss')
+            if 'forestboss' in BOSSES:
+                fight(forestboss)
+                BOSSES.remove('forestboss')
+            else:
+                print('elhagytad a környéket')
+                print('NYERTÉL')
+
+
         case '0':
             goto('city')
             return 0
     forest()
 
 def collectmoney():
+    global money
+    torles(money)
     print('Még kéne egy kis pénz')
     print('1...lopni')
     print('2...kéregetni')
     print('3...dolgozni')
     val = input('Hogyam szeretnél pénzt szerezni')
+    while val not in map(str, range(1, 4)):
+        val = input('Hogyam szeretnél pénzt szerezni')
     match val:
         case '1':
             cmoney = steal()
@@ -136,7 +425,10 @@ def collectmoney():
             cmoney = begging()
         case '3':
             cmoney = work()
-    return cmoney
+    money += cmoney
+    input('Vissza a várba ENTER-rel')
+    torles(money)
+    castle()
 
 def steal():
     global money
@@ -147,7 +439,7 @@ def steal():
         ido(15)
         return 20
     elif happening in range(6, 21):
-        print('megloptál egy haljéktalant, felismert. Csökkent a negítélésed.')
+        print('megloptál egy haljéktalant, felismert. Csökkent a megítélésed.')
         money += 20
         player.rep -= 30
         ido(15)
@@ -452,7 +744,7 @@ def sleepingdragon():
     global money
     print('el kéne eltatni a sárkányt, hogy később támadjon a városra. ')
     goto('dragonlayer')
-    if player.eberseg > 90 and player.speed > 3 and player.agility > 5:
+    if player.speed > 3 and player.agility > 5:
         print('Sikerült elaltatni a sárkányt, később fog a városra támadni.')
         print('a város 150 pénzel jutalmazott')
         money += 150
@@ -466,7 +758,7 @@ def stealFromDragon():
     global money
     print('Meg kéne lopni a sárkányt, így később fog a városra támadni.')
     goto('dragonlayer')
-    if player.eberseg > 90 and player.speed > 4 and player.agility > 3:
+    if player.speed > 4 and player.agility > 3:
         print('Sikerült meglopni a sárkányt,időt kell töltenie a vadászattal, később fog a városra támadni.')
         print('a város 100 pénzel jutalmazott')
         money += 100
@@ -480,7 +772,6 @@ def swordInStone():
     global money
     if player.strength < 5:
         print('Nem vagy elég erős ehhez. Lefáradtál a nagy próbálkozásban.')
-        player.eberseg -= 25
         return 0
     print('nagy erőlködés után sikerült kihúzni a kardot.')
     if player.strength == 5:
@@ -589,7 +880,6 @@ def bev():
     print('━━━━━━━━━━━━━━━━━━━━━━')
     Slowtype('\nEz a játék a középkorba repíti vissza a játékost,\nki a főszereplő útját bejárva próbál harcossá, \nvalamint a város hősévé válni.')
     input('\nTovábbhaladás az ENTER megnyomásával >>')
-    torles(money)
     os.system('cls')
     time.sleep(2)
     Slowtype(f'[{foszereplo}]: Végre elérkezett a nap!')
@@ -720,6 +1010,8 @@ def kikialtas():
     castle()
 
 if 'stat ' == 'stat ':
+    treasuryMap = False
+    key = False
     foszereplo = 'JÁTÉKOS'
     foszereplo = input('Mi a neved: ')
     player = characters()
@@ -1048,7 +1340,7 @@ def mineMiniGame():
 
 def displayerstat(money):
     print('━━━━━━━━━━━━━━━━━━━━━━')
-    print(f'HP: {player.hp}, Védésém: {player.shield}, Fegyver: {player.weapon} Erő: {player.strength}\nSebesség: {player.speed}, Éberség: {player.eberseg}, Ügyesseg: {player.agility}')
+    print(f'HP: {player.hp}, Védésém: {player.shield}, Fegyver: {player.weapon} Erő: {player.strength}\nSebesség: {player.speed}, Megítélés: {player.rep}, Ügyesseg: {player.agility}')
     print('Pénz:', money)
     print('━━━━━━━━━━━━━━━━━━━━━━')
     print('\n')
@@ -1169,10 +1461,8 @@ def ido(eltMinute=0, eltHour=0, eltDay=0):
     if not hour < 22:
         if nowplace == 'city' or 'castle':
             print('Elmentél a szállásra aludni.')
-            player.eberseg = 100
         else:
             print('A vadonban aludtál.')
-            player.eberseg == 75
         hour = 6
         minute = 0
 
@@ -1183,8 +1473,16 @@ def repchange(amount):
     if amount > 0:
         print(f'Megbecsültséged ennyivel nőtt: {amount}.')
     if player.rep < -50:
-        # prison()
-        pass
+        print('Annyire utálnak, hogy bebörtönöztek')
+        time.sleep(2)
+        print('Innen nincs kiút')
+        time.sleep(2)
+        print('Legközelebb legyél jóban velük.')
+        time.sleep(2)
+        print('\n')
+        print('━━━━━━━━━━━━━━━━━━━━━━')
+        print('VÉGE A JÁTÉKNAK.')
+        print('━━━━━━━━━━━━━━━━━━━━━━')
         sys.exit()
 
 def fight(enemy):
@@ -1510,11 +1808,12 @@ def castle():
     print('8...Küldetésfal')
     print('9...Várbörtön')
     print('10...Állatkereskedő')
+    print('11...Pénzt keresni a várban')
     print('0...Vár elhagyása')
     
     choice = ''
 
-    while choice not in map(str,range(0, 11)):
+    while choice not in map(str,range(0, 12)):
         choice = input('Hová szeretnék menni? ')
     match choice:
         case '1':
@@ -1539,6 +1838,8 @@ def castle():
             prison()
         case '10':
             animaltrader()
+        case '11':
+            collectmoney()
         case '0':
             leaveCity()
 
@@ -1573,12 +1874,12 @@ def castlegarden():
     torles(money)
     if lo:
         if isdragonalive:
-            print('a lovagi torna a sárkány legyőzése után kerül megrendezésre')
-        elif bool(input('Szeretnél benevezni a lovagi tornára? ')):
-            print('megvan az elegendő versenyző, indul a küzdelem')
+            print('A lovagi torna a sárkány legyőzése után kerül megrendezésre')
+        elif input('Szeretnél részt venni a lovagi tornán? '):
+            print('Még nincs elegendő versenyző a torna megkezdésére.')
+            knight()
         else:
             print('Majd gyere vissza ha van kedved')
-            knight()
     else:
         print('Ló nélkül nehéz lesz LÓvagi tornán részt venni')
     input('Vissza a városba ENTER-rel')
@@ -1595,14 +1896,76 @@ def hostel():
     torles(money)
     castle()
 
-def casino():
-    pass
-
 def treasury():
     torles(money)
     if isdragonalive:
         print('Bárcsak sok pénzem lenne itt.')
+    else:
+        robTheTreasury()
     input('Vissza a várba ENTER-rel')
+    torles(money)
+    castle()
+
+def robTheTreasury():
+    global treasuryMap, key, money
+    i = 1
+    if not treasuryMap:
+        print(f'{i}...Megszerezni a térképet')
+        i += 1
+    if not key:
+        print(f'{i}...Megszerezni a kulcsot')
+        i += 1
+    print(f'{i}...kirabolni a bankot a mostani cuccaimmal')
+    val = input('Mit szeretnél csinálni: ')
+    while val not in map(str, range(1, i+1)):
+        val = input('Mit szeretnél csinálni: ')
+    torles(money)
+    match val: 
+        case '1':
+            if treasuryMap and key: 
+                robbing()
+            elif treasuryMap :
+                if randint(player.speed, 10)  == 10:
+                    print('sikeresen megszerezted a kulcsokat.')
+                    key = True
+                else:
+                    print('megpróbáltad megszerezni a kulcsokat, nem sikerült.')
+                    repchange(-10)
+            else:
+                if randint(player.agility, 10)  == 10:
+                    print('sikeresen megszerezted a bank térképét.')
+                    treasuryMap = True
+                else:
+                    print('megpróbáltad megszerezni a bank térképét, nem sikerült.')
+                    repchange(-10)
+            input('Tovább ENTER-rel')
+            torles(money)
+            robTheTreasury()
+        
+        case '2':
+            if key:
+                robbing()
+            elif randint(player.agility, 10)  == 10:
+                print('sikeresen megszerezted a bank kulcsát.')
+                treasuryMap = True
+            else:
+                print('megpróbáltad megszerezni a bank kulcsát, nem sikerült.')
+                repchange(-10)
+        case '3':
+            robbing()
+            torles(money)
+    robTheTreasury()
+
+def robbing():
+    global treasuryMap, key, money
+    help = treasuryMap + key
+    if randint(help*2, 5):
+        print('sikeren  kiraboltad a bankot, szereztél 10000 pénzt')
+        money += 10000
+    else:
+        print('megpróbáltad kirabolni a bankot, nem sikerült.')
+        repchange(-20)
+    input('Vissza a városba ENTER-rel')
     torles(money)
     castle()
 
@@ -1614,5 +1977,4 @@ def prison():
     castle()
 
 if __name__ == '__main__':
-    money = 1000
-    castle()
+    bev()

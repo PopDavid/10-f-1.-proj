@@ -1189,7 +1189,7 @@ if 'stat ' == 'stat ':
         'arany'
     ]
 
-    currentquest = QUESTS[3]
+    currentquest = QUESTS[1]
 
 def mine():
     torles(money)
@@ -1977,4 +1977,6 @@ def prison():
     castle()
 
 if __name__ == '__main__':
-    bev()
+    money = 150
+    torles(money)
+    castle()

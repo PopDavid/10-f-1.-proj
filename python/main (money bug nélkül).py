@@ -345,6 +345,7 @@ def mountain():
                 print('még vannak máshol is bossok, amiket nem ártana legyőzni.')
         else:
             print('Már meghalt a sárkány.')
+    print('Vissza a várba ENTER-rel')
     
 def field():
     torles(money)
@@ -501,7 +502,7 @@ def begging():
                     vhour += 1
             print(cMoney, 'pénz szereztél')
             money += cMoney
-            input('Press enter')
+            input('Tovább ENTER-rel')
             torles(money)
         case '2':
             cMoney = 0
@@ -617,7 +618,7 @@ def hunting():
             print(f'Eltaláltad, már csak {5-vadak} prédát kell meglőnöd.')
         else:
             print(f'Nem találtad el, még {5-vadak} prédát kell meglőnöd.')
-        input('ENTER')
+        input('Követekző keresése ENTER-rel')
     print('eladtad a vadat a vadászoknak, kaptál érte 50 pénzt')
     money += 50
     currentquest = 'gyűjtőgetés'
@@ -644,12 +645,12 @@ def collecting():
         if need - find > 0:
             need -= find
             print(f'találtál {find} növényt ami neked kell. Már csak {need} növényt kell keresni')
-            input('ENTER')
+            input('Következő keresése ENTER-rel')
             torles(money)
         else:
             need = 0
             print(f'találtál {find} növényt ami neked kell. Megvan amiért jöttél')
-            input('ENTER')
+            input('Tovább ENTER-rel')
             torles(money)
             print('Vissza kéne menni a városba.')
             goto('city')
@@ -786,7 +787,7 @@ def swordInStone():
     if player.strength > 7:
         ido(30)
         print('A karddal 30 percet szerencsétlenkedtél')
-    input('ENTER')
+    input('Tovább ENTER-rel')
     print('1...eladod a kardot pénzért (65)')
     print('2...lemosod, és kiderül, hogy milyen erős')
     val = input('Melyiket választod? ')
@@ -861,7 +862,7 @@ def collectingFirst():
         if need - find > 0:
             need -= find
             print(f'Találtál {find} növényt, melyre szükséged is van. Már csak {need} növényt kell találnod.')
-            input('ENTER')
+            input('További keresése ENTER-rel')
             torles(money)
         else:
             need = 0
@@ -1032,15 +1033,15 @@ if 'stat ' == 'stat ':
     obszidianpajzs = shield(name='obszidiánpajzs (11)', shield=11, price=210)
 
     goblin = Enemies(name='goblin', hp=5, strength=4, speed=2, shield=5)
-    ogre = Enemies(name='ogre', hp=10, strength=7, speed=4, shield=10)
-    bandit = Enemies(name='bandit', hp=7, strength=11, speed=5, shield=12)
-    cerberus = Enemies(name='cerberus', hp=15, strength=16, speed=3, shield=8)
-    vampir = Enemies(name='vampir', hp=20, strength=14, speed=2, shield=11)
+    ogre = Enemies(name='ogre', hp=15, strength=7, speed=4, shield=10)
+    bandit = Enemies(name='bandit', hp=20, strength=15, speed=5, shield=12)
+    cerberus = Enemies(name='cerberus', hp=30, strength=16, speed=3, shield=15)
+    vampir = Enemies(name='vampir', hp=50, strength=14, speed=2, shield=20)
 
-    mineboss = Enemies(name='Bánya boss', hp=50, strength=20, speed=4, shield=25)
-    forestboss = Enemies(name='erdő boss', hp=100, strength=25, speed=2, shield=35)
-    fieldboss = Enemies(name='mező boss', hp=75, strength=23, speed=6, shield=30)
-    dragon = Enemies(name='sárkány', hp=250, strength=45, speed=10, shield=50)
+    mineboss = Enemies(name='Bánya boss', hp=50, strength=30, speed=4, shield=35)
+    forestboss = Enemies(name='erdő boss', hp=100, strength=35, speed=2, shield=45)
+    fieldboss = Enemies(name='mező boss', hp=75, strength=37, speed=6, shield=40)
+    dragon = Enemies(name='sárkány', hp=250, strength=45, speed=10, shield=60)
 
     isdragonalive = True
     money = 0
@@ -1244,7 +1245,7 @@ def fieldMiniGame():
     print('gyömbér kell')
     print('macskafű kell')
     print('pitypang nem kell')
-    input('ENTER')
+    input('Játék indítása ENTER-rel')
     os.system('cls')
     startTime = time.time()
     while time.time() - startTime < 30:

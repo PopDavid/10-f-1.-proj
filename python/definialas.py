@@ -6,6 +6,7 @@ from bosses import *
 import random
 from minigames import *
 
+foszereplo = 'Játékos'
 
 Eweapon = 0
 EShield = 0

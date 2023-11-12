@@ -2,15 +2,17 @@ from city import *
 del money
 from variables import money
 
+foszereplo = 'Játékos'
+
 def collectingFirst():
     global currentquest, money
-    Slowtype('[SZOLGA]: A király fia megbetegedett! Mai feladatod, hogy gyógynövényeket szedj neki a mezőn!')
+    Slowtype('[Szolga]: A király fia megbetegedett! Mai feladatod, hogy gyógynövényeket szedj neki a mezőn!')
     time.sleep(1)
     Slowtype('(Gondolat): Remélem ezért jutalomban fogok részesülni!')
     time.sleep(2)
     nowplace = 'field'
     print('Megérkeztél a mezőre.')
-    input('Keresgéléshez nyomj ENTER-t')
+    input('Keresgélés az ENTER megnyomásával >>')
     
     torles(money)
     esely = 5  - player.speed
@@ -29,7 +31,7 @@ def collectingFirst():
             torles(money)
         else:
             need = 0
-            Slowtype(f'[{foszereplo}]Megtaláltam a {find} növényt. Megvan amiért jöttem!')
+            Slowtype(f'[{foszereplo}]: Megtaláltam a {find} növényt. Megvan amiért jöttem!')
             time.sleep(1)
             nowplace = 'city'
             print('Leadtad a gyógynövényeket, 50 pénz üti markod.')
@@ -39,7 +41,7 @@ def collectingFirst():
 
 def bev():
     global nowplace, foszereplo
-    foszereplo = input('Mi a neved: ')
+    
     print('━━━━━━━━━━━━━━━━━━━━━━')
     print('Medieval City Game')
     print('━━━━━━━━━━━━━━━━━━━━━━')
@@ -50,21 +52,21 @@ def bev():
     time.sleep(2)
     Slowtype(f'[{foszereplo}]: Végre elérkezett a nap!')
 
-    # time.sleep(2)
-    # Slowtype(f'[{foszereplo}]: Eljött az én időm!')
-    # time.sleep(2)
-    # Slowtype('[???]: Jó reggelt!')
-    # time.sleep(1.5)
-    # Slowtype('ZzZzZzZzZzZz')
-    # time.sleep(1.5)
-    # Slowtype(f'[{foszereplo}]: Megtöröm a gonosz sárkány uralmát!')
-    # time.sleep(2)
-    # Slowtype('[???]: Ébresztő!')
-    # time.sleep(1.5)
-    # Slowtype('ZzZzZzZzZzZz')
-    # time.sleep(1)
-    # input('\nFelébredés az ENTER megnyomásával >>')
-    # os.system('cls')
+    time.sleep(2)
+    Slowtype(f'[{foszereplo}]: Eljött az én időm!')
+    time.sleep(2)
+    Slowtype('[???]: Jó reggelt!')
+    time.sleep(1.5)
+    Slowtype('ZzZzZzZzZzZz')
+    time.sleep(1.5)
+    Slowtype(f'[{foszereplo}]: Megtöröm a gonosz sárkány uralmát!')
+    time.sleep(2)
+    Slowtype('[???]: Ébresztő!')
+    time.sleep(1.5)
+    Slowtype('ZzZzZzZzZzZz')
+    time.sleep(1)
+    input('\nFelébredés az ENTER megnyomásával >>')
+    os.system('cls')
 
     time.sleep(1)
     Slowtype('[SZOLGA]: Jó reggelt hétalvók, ideje felkelni.')
@@ -79,9 +81,12 @@ def bev():
     nowplace = 'field'
 
     collectingFirst()
-    kikialtas()
+#     kikialtas()
 
-def kikialtas():
+# def kikialtas():
+
+
+
     print('*dobpergés*')
     time.sleep(1.5)
     Slowtype('[DOBOS]: Figyelem, figyelem! Közhírré tétetik a király szava.')
@@ -102,8 +107,8 @@ def kikialtas():
 
     print('Sikeresen megérkeztél várba.')
 
-    Slowtype(f'[KIRÁLY]: Őrök! Hívják be a következő látogatót!')
-    Slowtype(f'[ŐRÖK]: Kérem jöjjön be a következő!')
+    Slowtype(f'[Király]: Őrök! Hívják be a következő látogatót!')
+    Slowtype(f'[Őrök]: Jöjjön be a következő!')
 
 
     print('\nHogy köszöntöd a királyt?')
@@ -124,7 +129,7 @@ def kikialtas():
             
             case '2':
                 Slowtype(f'[{foszereplo}]: Hallod-e király? Vállalkoznék a sárkány legyőzésére!')
-                Slowtype(f'[ŐR]: A király nem ilyen hangnemet érdemel!')
+                Slowtype(f'[Őr]: A király nem ilyen hangnemet érdemel!')
                 print(f'Megütött az őr, ezzel 2-t sebezve.')
                 takeDamage(2)
                 
@@ -133,9 +138,9 @@ def kikialtas():
             
             case '3':
                 Slowtype(f'[{foszereplo}]: Vállalkoznék a sárkány legyőzésére!')
-                Slowtype(f'[ŐR]: Kihez beszélsz?')
+                Slowtype(f'[Őr]: Kihez beszélsz?')
                 Slowtype(f'[{foszereplo}]: Őfelségéhez.')
-                Slowtype(f'[ŐR]: Akkor köszöntsd a királyt!')
+                Slowtype(f'[Őr]: Akkor köszöntsd a királyt!')
 
                 print('\nHogy köszöntöd a királyt?')
                 print('━━━━━━━━━━━━━━━━━━━━━━')
@@ -155,19 +160,29 @@ def kikialtas():
                         
                         case '2':
                             Slowtype(f'[{foszereplo}]: Hallod-e király? Vállalkoznék a sárkány legyőzésére!')
-                            Slowtype(f'[ŐR]: A király nem ilyen hangnemet érdemel!')
+                            Slowtype(f'[Őr]: A király nem ilyen hangnemet érdemel!')
                             print(f'Megütött az őr, ezzel 2-t sebezve.')
                             takeDamage(2)
                             repchange(-10)
                             print('A királlyal mindig tisztelettel beszélj!')
 
                         case _:
-                            print('Érvénytelen választ adtál meg!')
+                            Slowtype(f'[Őr]: Mit hablatyolsz? Beszélj érthetően!')
 
             case _:
-                print('Érvénytelen választ adtál meg!')
-    Slowtype('[Király]: Áldásomat adom küldetésedre, próbáld meg.')
-    input('Kimenés a várba ENTER megnyomásával.')
+                Slowtype(f'[Őr]: Mit hablatyolsz? Beszélj érthetően!')
+                
+    Slowtype('[Király]: Hogy hívnak, bátor kalandor?')
+    
+    while foszereplo == ('Játékos' or '' or ' ' or '   ' or '    ' or '     ' or '      '):
+        foszereplo = Slowtype(input(f'[{foszereplo}]: Királyom, az én becses nevem nem más, mint '))
+        if foszereplo == ('Játékos' or '' or ' ' or '   ' or '    ' or '     ' or '      '):
+            Slowtype(f'[Király]: Milyen tökkelütöttnek nézel, hogy elhiggyem, téged valóban így hívnak?')
+            repchange(-1)
+
+    Slowtype(f'[Király]: {foszereplo}, áldásomat adom küldetésedre. Járj szerencsével!')
+    
+    input('\nTerem elhagyása az ENTER megnyomásával >>')
     torles(money)
 
 

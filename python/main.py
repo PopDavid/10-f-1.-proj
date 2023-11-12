@@ -1,4 +1,8 @@
-from classes import *
-from definialas import *
-from variables import *
+from story import *
+del money
+from variables import money
 
+# story.bev()
+money = 100
+torles(money)
+castle()

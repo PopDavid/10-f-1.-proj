@@ -41,7 +41,8 @@ class shield:
 
     def __str__(self):
         return self.name
-    
+
+
 class armor:
     def __init__(self, name,shield, price) -> None:
         self.shield = shield
@@ -50,3 +51,4 @@ class armor:
 
     def __str__(self):
         return self.name
+

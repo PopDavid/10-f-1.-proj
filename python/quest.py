@@ -1,8 +1,7 @@
-from classes import *
-from variables import *
-from definialas import *
-from random import choice
 import time
+from places import *
+del money
+from variables import money
 
 
 def collectmoney():
@@ -94,7 +93,7 @@ def begging():
             print(cMoney, 'pénz szereztél')
             money += cMoney
             input('Press enter')
-            torles()
+            torles(money)
         case '2':
             cMoney = 0
             print(cMoney)
@@ -139,7 +138,7 @@ def work():
 
 def PALjatek():
     global Palvolt, pal, PAL
-    torles()
+    torles(money)
     Slowtype('Játék: Odamegy hozzád egy öreg özvegy néni.')
     Slowtype('özvegy: Jó napot fiatal ember.\nözvegy: Ön nagyon hasonlít a férjemre. Őt Bogáncs Pálnak hívták.\nTiszteletére megkérlek, hogy mondjál annyi szót PÁLlal, amennyit csak tudsz 1 perc alatt.')
     input('ENTERrel kezdés')
@@ -189,18 +188,20 @@ def hunting():
     if esely < 1:
         esely = 1
     print('a vadászok előrementek a mezőre, neked is oda kéne menned.')
+    input('Indulás ENTER-rel')
+    torles(money)
     goto('field')
     Slowtype('vadászok: a cél 10 vadat elejteni.')
     input('ENTER-rel kezdődik a vadászat')
     vadak = 0
     while vadak != 5:
-        torles()
+        torles(money)
         while randint(1, 4) != 1:
             print('vársz')
             ido(5)
             time.sleep(1.5)
             ido(10)
-        torles()
+        torles(money)
         print('meglátsz egy prédát')
         time.sleep(2)
         print('rácélzol')
@@ -216,14 +217,17 @@ def hunting():
     print('eladtad a vadat a vadászoknak, kaptál érte 50 pénzt')
     money += 50
     currentquest = 'gyűjtőgetés'
-
+    print('a vadászok visszakísértek a városba')
+    input('indulás ENTER-rel')
 
 def collecting():
     global currentquest, money
-    print('A király fia beteg.\ntalán ha szednék neki egy kis gyógyfüzet a mezőről kapnék egy kis jutalmat.')
+    print('A király fia megint beteg.\ntalán ha szednék neki egy kis gyógyfüzet a mezőről kapnék egy kis jutalmat.')
+    input('Indulás a mezőrr ENTER-rel.')
+    torles(money)
     if nowplace != 'field':
         goto('field')
-    torles()
+    torles(money)
     esely = 5 - player.speed
     if esely < 1:
         esely = 1
@@ -237,50 +241,19 @@ def collecting():
             need -= find
             print(f'találtál {find} növényt ami neked kell. Már csak {need} növényt kell keresni')
             input('ENTER')
-            torles()
+            torles(money)
         else:
             need = 0
             print(f'találtál {find} növényt ami neked kell. Megvan amiért jöttél')
             input('ENTER')
-            torles()
+            torles(money)
             print('Vissza kéne menni a városba.')
             goto('city')
             print('Leadtad a gyógynövényeket, kaptál érte 50 pénzt')
             money += 50
-           #  currentquest = 'ogrevadászat'
+            currentquest = 'ogrevadászat'
 
-def collectingFirst():
-    global currentquest, money
-    Slowtype('[SZOLGA]: A király fia megbetegedett! Mai feladatod, hogy gyógynövényeket szedj neki a mezőn!')
-    time.sleep(1)
-    Slowtype('(Gondolat): Remélem ezért jutalomban fogok részesülni!')
-    time.sleep(2)
-    nowplace = 'field'
-    print('Sikeresen megérkeztél ide: {nowplace}')
-    torles()
-    esely = 5  - player.speed
-    if esely < 1:
-       esely = 1
-    need = 20
-    while need != 0:
-        while randint(1, esely) != 1:
-            print('Gyógynövény után kutatsz.')
-            time.sleep(1.5)
-        find = randint(1, 3)
-        if need -find > 0:
-            need -= find
-            print(f'Találtál {find} növényt, melyre szükséged is van. Már csak {need} növényt kell találnod.')
-            input('ENTER')
-            torles()
-        else:
-            need = 0
-            Slowtype(f'[]Megtaláltam a {find} növényt. Megvan amiért jöttem!')
-            time.sleep(1)
-            input('\Visszatérés a városba az ENTER megnyomásával >>')
-            torles()
-            nowplace = 'city'
-            print('Leadtad a gyógynövényeket, 50 pénz üti markod.')
-            money += 50
+
            
 
 
@@ -291,7 +264,7 @@ def knightquest():
 
 def ogrehunt():
     global currentquest, money
-    print('A hegy kség el van árasztva ogrével.\noda kéne menni, egy kicsit szétcsapni közöttük.')
+    print('A hegység el van árasztva ogrével.\noda kéne menni, egy kicsit szétcsapni közöttük.')
     goto('mountain')
     print('mások is vannak itt, besegítek nekik')
     needKillogre = 3
@@ -436,15 +409,19 @@ def swordInStone():
 
 
 def questboard():
-    print('1... ', currentquest)
+    torles(money)
+    print('1...', currentquest)
     i = 1
     for quest in universialquest:
         i += 1
-        print(i, '...', quest)
-    questindex = int(input('Melyiket szeretnéd megcsinálni? ')) - 2
+        print(f'{i}...{quest}')
+    print('0...Vissza a várba')
+    val = ''
+    while val not in map(str, range(0, i+1)):
+        val = input('Melyiket szeretnéd megcsinálni? ')
+    questindex = int(val)-2
 
-    # while questindex > len(universialquest):
-    # questindex = int(input('Melyiket szeretnéd megcsinálni? '))-2
+
     match questindex:
         case -1:
             sidequest()
@@ -458,6 +435,8 @@ def questboard():
             sleepingdragon()
         case 4:
             stealFromDragon()
+        case 0:
+            pass
 
 
 if __name__ == '__main__':

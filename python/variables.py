@@ -1,5 +1,6 @@
 from classes import *
-
+foszereplo = 'JÁTÉKOS'
+foszereplo = input('Mi a neved: ')
 player = characters()
 
 
@@ -16,7 +17,7 @@ obszidianpancel = armor(name='obszidianpáncél (11)', shield=11, price=320)
 fapajzs = shield(name='fapáncél (1)', shield=1, price=25)
 marvanypajzs = shield(name='marvanypáncél (2)', shield=2, price=55)
 vaspajzs = shield(name='vaspáncél (5)', shield=5, price=105)
-obszidianpajzs = shield(name='vaspáncél (11)', shield=11, price=210)
+obszidianpajzs = shield(name='obszidiánpajzs (11)', shield=11, price=210)
 
 goblin = Enemies(name='goblin', hp=5, strength=4, speed=2, shield=5)
 ogre = Enemies(name='ogre', hp=10, strength=7, speed=4, shield=10)
@@ -30,7 +31,7 @@ fieldboss = Enemies(name='mező boss', hp=75, strength=23, speed=6, shield=30)
 dragon = Enemies(name='sárkány', hp=250, strength=45, speed=10, shield=50)
 
 
-
+isdragonalive = True
 money = 0
 nowplace = 'city'
 hour = 6
@@ -95,7 +96,6 @@ QUESTS = [
 
 universialquest = [
     'özvegy néni férje',
-    'lovagi torna',
     'kard a kőben',
     'elaltatni a sárkányt',
     'meglopni a sárkányt'
@@ -124,7 +124,8 @@ PAL = [
     'bekrepál',
     'strapál',
     'rúgkapál',
-    'kupál'
+    'kupál',
+    'szlopál'
 ]
 
 pal = [
@@ -146,7 +147,8 @@ pal = [
     'bekrepál',
     'strapál',
     'rúgkapál',
-    'kupál'
+    'kupál',
+    'szlopál'
 ]
 
 PLACE = [
@@ -187,6 +189,8 @@ currentquest = QUESTS[1]
 
 # OPICÓS LISTÁK
 
+opcio2 = ['0', '1', '2']
+opcio3 = ['0', '1', '2', '3']
 opcio4 = ['0', '1', '2', '3', '4']
 opcio5 = ['0', '1', '2', '3', '4', '5']
 opcio6 = ['0', '1', '2', '3', '4', '5', '6']

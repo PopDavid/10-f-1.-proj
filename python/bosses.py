@@ -8,3 +8,6 @@ def fieldBossFight():
 
 def mineBossFight():
     pass
+
+def dragonfight():
+    pass

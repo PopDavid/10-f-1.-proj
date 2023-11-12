@@ -1,15 +1,15 @@
-import time
-import os
-from random import randint
 from definialas import *
-from variables import *
+del money
+from variables import money
+
 ertek = 0
-fa = 0
 
 
 def forestMiniGame():
     score = 0
-    global fa, money
+    global money
+    fa = 0
+
     print('elkezdtél fát vágni')
     startTime = time.time()
     while time.time() - startTime < 10:
@@ -79,10 +79,16 @@ def mineMiniGame():
         for i in szenBoundle:
             print(i, end=' ')
         print('\n')
-        eb = input('Melyikből')
-        ee = int(input('Melyik elem'))
-        mb = input('Melyikből')
-        me = int(input('Melyik elem'))
+        eb, ee, mb, me = 0, 0, 0, 0
+        while eb not in map(str, range(1, 4)):
+            eb = input('Melyikből')
+        while ee not in map(str, range(1, 6)):
+            ee = input('Melyik elem')
+        while mb not in map(str, range(1, 4)):
+            mb = input('Melyikből')
+        while me not in map(str, range(1, 6)):
+            me = input('Melyik elem')
+        ee, me = int(ee), int(me)
         match eb:
             case '1':
                 boundle1 = aranyBoundle

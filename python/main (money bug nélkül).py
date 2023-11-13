@@ -614,7 +614,7 @@ def hunting():
         time.sleep(2)
         print('lösz')
         time.sleep(2)
-        if randint(1, esely) == 1:
+        if randint(1, esely-1) == 1:
             vadak += 1
             print(f'Eltaláltad, már csak {5-vadak} prédát kell meglőnöd.')
         else:
@@ -659,9 +659,6 @@ def collecting():
             money += 50
             currentquest = 'ogrevadászat'
 
-def knightquest():
-    if not lo:
-        print('nincs lovad, gyere vissza ha lesz.')
 
 def ogrehunt():
     global currentquest, money
@@ -1034,10 +1031,10 @@ def bev():
                 
     Slowtype('[Király]: Hogy hívnak, bátor kalandor?')
     time.sleep(1)
-
-    while foszereplo == ('Játékos' or '' or ' ' or '   ' or '    ' or '     ' or '      '):
+    foszereplo = 'Játékos'
+    while foszereplo in  ['Játékos' ,  '' ,  ' ' ,  '   ' ,  '    ' ,  '     ' ,  '      ']:
         foszereplo = Slowtype(input(f'[{foszereplo}]: Királyom, az én becses nevem nem más, mint '))
-        if foszereplo == ('Játékos' or '' or ' ' or '   ' or '    ' or '     ' or '      '):
+        if foszereplo in  ['Játékos' ,  '' ,  ' ' ,  '   ' ,  '    ' ,  '     ' ,  '      ']:
             Slowtype(f'[Király]: Milyen tökkelütöttnek nézel, hogy elhiggyem, téged valóban így hívnak?')
             repchange(-1)
             time.sleep(1)
@@ -1052,6 +1049,7 @@ def bev():
 
     input('\nTerem elhagyása az ENTER megnyomásával >>')
     torles(money)
+    nowplace = 'city'
     castle()
 
 if 'stat ' == 'stat ':

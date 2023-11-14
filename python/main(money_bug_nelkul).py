@@ -933,7 +933,7 @@ def bev():
 
     Slowtype('[Király]: Hányas évet írunk?')
     time.sleep(2)
-    Slowtype('[Főőr]: k.e. 50.')
+    Slowtype('[Főőr]: k.e. 50-et.')
     time.sleep(2)
     Slowtype('[Király]: Mit jelent a k.e.?')
     time.sleep(2)

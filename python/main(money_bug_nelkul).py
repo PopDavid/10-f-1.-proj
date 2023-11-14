@@ -552,6 +552,8 @@ def PALjatek():
     score = 0
     while time.time() - startTime < 60:
         val = input('Szó:').lower()
+        if val == 'mr. pál':
+            print('Köszönöm az ösztöndíjat')
         if val in pal:
             score += 1
             pal.remove(val)
@@ -565,8 +567,9 @@ def PALjatek():
         pal.append(elem)
     if not Palvolt:
         Slowtype('özvegy: Nagyon jól teljesítettél.\nözvegy: Itt van egy kis pénz a szórakozásért')
+        Slowtype(f'[{foszereplo}]: Köszönöm az ösztöndíjjat.')
         rew = score * 3
-        Slowtype(f'játék: kaptál {rew} pénzt a banyától.')
+        print(f'Kaptál {rew} pénzt a banyától.')
         money += rew
         Palvolt = True
     else:
@@ -878,10 +881,8 @@ def bev():
     time.sleep(3)
     Slowtype('\nEz a játék a középkorba repíti vissza a játékost,\nki a főszereplő útját bejárva próbál harcossá, \nvalamint a város hősévé válni.')
     input('\nTovábbhaladás az ENTER megnyomásával >>')
-    torles(money)
-    time.sleep(3)
     os.system('cls')
-    time.sleep(2)
+    time.sleep(0.5)
     Slowtype(f'[{foszereplo}]: Végre elérkezett a nap!')
     time.sleep(2)
     Slowtype(f'[{foszereplo}]: Eljött az én időm!')
@@ -930,18 +931,21 @@ def bev():
     print('Sikeresen megérkeztél a várba.')
     time.sleep(1)
 
-    Slowtype('[Király]: Hányas évet írunk')
-    time.sleep(1)
-    Slowtype('[Főőr]: k.e. 50')
-    time.sleep(1)
+    Slowtype('[Király]: Hányas évet írunk?')
+    time.sleep(2)
+    Slowtype('[Főőr]: k.e. 50.')
+    time.sleep(2)
     Slowtype('[Király]: Mit jelent a k.e.?')
-    time.sleep(1)
+    time.sleep(2)
     Slowtype('[Főőr]: Krisztus előtt.')
-    time.sleep(1)
+    time.sleep(2)
     Slowtype('[Király]: Ki az a Krisztus?')
-    time.sleep(1)
-    Slowtype('[Főőr]: Ötletem sincs')
-    time.sleep(1)
+    time.sleep(2)
+    Slowtype('[Főőr]: Ötletem sincs.')
+    time.sleep(2)
+    input('Nyih-nyih-nyih')
+    torles(money)
+    time.sleep(0.5)
 
 
     Slowtype(f'[Király]: Őrök! Hívják be a következő látogatót!')
@@ -1033,7 +1037,8 @@ def bev():
     time.sleep(1)
     foszereplo = 'Játékos'
     while foszereplo in  ['Játékos' ,  '' ,  ' ' ,  '   ' ,  '    ' ,  '     ' ,  '      ']:
-        foszereplo = Slowtype(input(f'[{foszereplo}]: Királyom, az én becses nevem nem más, mint '))
+        Slowtype(f'[MÉG None]: Királyom, az én becses nevem nem más, mint ', end=False)
+        foszereplo = input()
         if foszereplo in  ['Játékos' ,  '' ,  ' ' ,  '   ' ,  '    ' ,  '     ' ,  '      ']:
             Slowtype(f'[Király]: Milyen tökkelütöttnek nézel, hogy elhiggyem, téged valóban így hívnak?')
             repchange(-1)
@@ -1480,12 +1485,13 @@ def tovabblepes():
     print('\n\n\n')
     displayerstat(money)
 
-def Slowtype(text):
+def Slowtype(text, end = True):
 
     for i in text:
         print(i, end='')
         time.sleep(0.05)
-    print()
+    if end:
+        print()
 
 def ido(eltMinute=0, eltHour=0, eltDay=0):
     global hour, minute, day

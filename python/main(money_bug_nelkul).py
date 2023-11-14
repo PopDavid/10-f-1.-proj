@@ -19,10 +19,10 @@ def rangeEgeszszambekeres(szoveg = ' ', min = 0, max = 10000):
     szam = ' '
     while True:
         szam = egeszszambekeres(szoveg)
-        if szam < min or szam >max:
-            pass
-        else:
+        if szam in map(str, range(min, max+1)):
             break
+        # if szam < min or szam >max:
+        #     pass
     return int(szam)
 
 def menu():
@@ -76,7 +76,7 @@ def oddEven():
     return egyenleg
 
 def tet():
-    tet = rangeEgeszszambekeres('Mennyi a tét? ')
+    tet = rangeEgeszszambekeres('Mennyi a tét? ', 0, money)
     print(f' \nA tét:{tet}')
     return tet
 

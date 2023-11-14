@@ -19,10 +19,8 @@ def rangeEgeszszambekeres(szoveg = ' ', min = 0, max = 10000):
     szam = ' '
     while True:
         szam = egeszszambekeres(szoveg)
-        if szam in map(str, range(min, max+1)):
+        if szam in range(min, max+1):
             break
-        # if szam < min or szam >max:
-        #     pass
     return int(szam)
 
 def menu():
@@ -77,6 +75,9 @@ def oddEven():
 
 def tet():
     tet = rangeEgeszszambekeres('Mennyi a tét? ', 0, money)
+    while tet == money:
+        print('ne játszd el az összes pénzed')
+        tet = rangeEgeszszambekeres('Mennyi a tét? ', 0, money)
     print(f' \nA tét:{tet}')
     return tet
 
@@ -1995,6 +1996,6 @@ def prison():
     castle()
 if __name__ == '__main__':
     # bev()
-    money = 1500
+    money = 150
     torles(money)
     castle()

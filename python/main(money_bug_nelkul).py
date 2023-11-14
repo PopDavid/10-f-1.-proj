@@ -5,16 +5,13 @@ EShield = 0
 Earmor = 0
 ertek = 0
 piros = [1, 3, 5, 7, 9, 12, 14, 16, 18, 19, 21, 23, 25, 27, 30, 32, 34, 36 ]
-
 def egeszszambekeres(szoveg) -> int:
     szam = ''
     while not szam.isdecimal():
         szam = input(szoveg)
     return int(szam)
-
 def cont():
      input('Press ENTER to continue')
-
 def rangeEgeszszambekeres(szoveg = ' ', min = 0, max = 10000):
     szam = ' '
     while True:
@@ -660,7 +657,6 @@ def collecting():
             money += 50
             currentquest = 'ogrevadászat'
 
-
 def ogrehunt():
     global currentquest, money
     torles(money)
@@ -876,19 +872,16 @@ def collectingFirst():
 
 def bev():
     global nowplace, foszereplo, money
-    
     print('━━━━━━━━━━━━━━━━━━━━━━')
     print('Medieval City Game')
     print('━━━━━━━━━━━━━━━━━━━━━━')
     time.sleep(3)
     Slowtype('\nEz a játék a középkorba repíti vissza a játékost,\nki a főszereplő útját bejárva próbál harcossá, \nvalamint a város hősévé válni.')
     input('\nTovábbhaladás az ENTER megnyomásával >>')
-    
     torles(money)
     time.sleep(3)
     os.system('cls')
     time.sleep(2)
-    
     Slowtype(f'[{foszereplo}]: Végre elérkezett a nap!')
     time.sleep(2)
     Slowtype(f'[{foszereplo}]: Eljött az én időm!')
@@ -905,7 +898,6 @@ def bev():
     time.sleep(1)
     input('\nFelébredés az ENTER megnyomásával >>')
     os.system('cls')
-
     time.sleep(1)
     Slowtype('[SZOLGA]: Jó reggelt hétalvók, ideje felkelni.')
     time.sleep(2)
@@ -915,14 +907,8 @@ def bev():
     time.sleep(1)
     input('\nTovábbhaladás az ENTER megnyomásával >>')
     torles(money)
-
     nowplace = 'field'
-
     collectingFirst()
-
-
-
-
     print('*dobpergés*')
     time.sleep(1.5)
     Slowtype('[DOBOS]: Figyelem, figyelem! Közhírré tétetik a király szava.')
@@ -941,8 +927,21 @@ def bev():
     
     torles(money)
 
-    print('Sikeresen megérkeztél várba.')
+    print('Sikeresen megérkeztél a várba.')
+    time.sleep(1)
 
+    Slowtype('[Király]: Hányas évet írunk')
+    time.sleep(1)
+    Slowtype('[Főőr]: k.e. 50')
+    time.sleep(1)
+    Slowtype('[Király]: Mit jelent a k.e.?')
+    time.sleep(1)
+    Slowtype('[Főőr]: Krisztus előtt.')
+    time.sleep(1)
+    Slowtype('[Király]: Ki az a Krisztus?')
+    time.sleep(1)
+    Slowtype('[Főőr]: Ötletem sincs')
+    time.sleep(1)
 
 
     Slowtype(f'[Király]: Őrök! Hívják be a következő látogatót!')
@@ -1995,7 +1994,7 @@ def prison():
     torles(money)
     castle()
 if __name__ == '__main__':
-    # bev()
-    money = 150
-    torles(money)
-    castle()
+    bev()
+    # money = 150
+    # torles(money)
+    # castle()

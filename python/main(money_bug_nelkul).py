@@ -933,9 +933,9 @@ def bev():
 
     Slowtype('[Király]: Hányas évet írunk?')
     time.sleep(2)
-    Slowtype('[Főőr]: k.e. 50-et.')
+    Slowtype('[Főőr]: K.E. 50-et.')
     time.sleep(2)
-    Slowtype('[Király]: Mit jelent a k.e.?')
+    Slowtype('[Király]: Mit jelent a K.E.?')
     time.sleep(2)
     Slowtype('[Főőr]: Krisztus előtt.')
     time.sleep(2)
@@ -1037,7 +1037,7 @@ def bev():
     time.sleep(1)
     foszereplo = 'Játékos'
     while foszereplo in  ['Játékos' ,  '' ,  ' ' ,  '   ' ,  '    ' ,  '     ' ,  '      ']:
-        Slowtype(f'[MÉG None]: Királyom, az én becses nevem nem más, mint ', end=False)
+        Slowtype(f'[Játékos]: Királyom, az én becses nevem nem más, mint ', end=False)
         foszereplo = input()
         if foszereplo in  ['Játékos' ,  '' ,  ' ' ,  '   ' ,  '    ' ,  '     ' ,  '      ']:
             Slowtype(f'[Király]: Milyen tökkelütöttnek nézel, hogy elhiggyem, téged valóban így hívnak?')

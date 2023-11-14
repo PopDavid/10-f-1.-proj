@@ -4,11 +4,7 @@ Eweapon = 0
 EShield = 0
 Earmor = 0
 ertek = 0
-
-
-
 piros = [1, 3, 5, 7, 9, 12, 14, 16, 18, 19, 21, 23, 25, 27, 30, 32, 34, 36 ]
-
 
 def egeszszambekeres(szoveg) -> int:
     szam = ''
@@ -402,6 +398,10 @@ def forest():
             else:
                 print('elhagytad a környéket')
                 print('NYERTÉL')
+                print('━━━━━━━━━━━━━━━━━━━━━━')
+                print('VÉGE A JÁTÉKNAK.')
+                print('━━━━━━━━━━━━━━━━━━━━━━')
+                sys.exit()
 
 
         case '0':
@@ -1994,7 +1994,7 @@ def prison():
     torles(money)
     castle()
 if __name__ == '__main__':
-    bev()
-    # money = 150
-    # torles(money)
-    # castle()
+    # bev()
+    money = 1500
+    torles(money)
+    castle()
